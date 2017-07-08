@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ilslib-dev" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="lib/ils" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="lib" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wmain" />
+					<Add option="-pedantic" />
+					<Add option="-std=c++11" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-ansi" />
+					<Add option="-g" />
+					<Add option="-DSFML_STATIC" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="ilslib-dev" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="../external-libs/FML-2.1/include" />
+		</Compiler>
+		<Linker>
+			<Add library="sfml-graphics-s-d" />
+			<Add library="sfml-window-s-d" />
+			<Add library="sfml-system-s-d" />
+			<Add directory="../external-libs/FML-2.1/lib" />
+		</Linker>
+		<Unit filename="include/base/ilslib_color.hpp" />
+		<Unit filename="include/base/ilslib_rectangle.hpp" />
+		<Unit filename="include/base/ilslib_support.hpp" />
+		<Unit filename="include/base/ilslib_support_template.hpp" />
+		<Unit filename="include/base/ilslib_vector.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_block_collection.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_block_collection_template.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_const_iterator.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_const_iterator_template.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_filter.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_filter_template.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_iterator.hpp" />
+		<Unit filename="include/blocks/collections/ilslib_iterator_template.hpp" />
+		<Unit filename="include/blocks/dpinfo/ilslib_dimensions_info.hpp" />
+		<Unit filename="include/blocks/dpinfo/ilslib_dimensions_mapper.hpp" />
+		<Unit filename="include/blocks/dpinfo/ilslib_position_info.hpp" />
+		<Unit filename="include/blocks/dpinfo/ilslib_position_mapper.hpp" />
+		<Unit filename="include/blocks/ilslib_basic_block.hpp" />
+		<Unit filename="include/blocks/ilslib_bg_color_gradient.hpp" />
+		<Unit filename="include/blocks/ilslib_component.hpp" />
+		<Unit filename="include/blocks/ilslib_container.hpp" />
+		<Unit filename="include/blocks/ilslib_container_style.hpp" />
+		<Unit filename="include/blocks/ilslib_flow_container.hpp" />
+		<Unit filename="include/blocks/ilslib_selector.hpp" />
+		<Unit filename="include/blocks/settings/ilslib_component_settings.hpp" />
+		<Unit filename="include/blocks/settings/ilslib_container_settings.hpp" />
+		<Unit filename="include/blocks/settings/ilslib_flow_container_settings.hpp" />
+		<Unit filename="include/blocks/settings/ilslib_settings.hpp" />
+		<Unit filename="include/components/ilslib_image_component.hpp" />
+		<Unit filename="include/components/ilslib_text_component.hpp" />
+		<Unit filename="include/drawables/adjustment_results/ilslib_adjustment_results.hpp" />
+		<Unit filename="include/drawables/adjustment_results/ilslib_gradient_ar.hpp" />
+		<Unit filename="include/drawables/adjustment_results/ilslib_image_ar.hpp" />
+		<Unit filename="include/drawables/adjustment_results/ilslib_rectangle_color_ar.hpp" />
+		<Unit filename="include/drawables/adjustment_results/ilslib_text_ar.hpp" />
+		<Unit filename="include/drawables/ilslib_drawable.hpp" />
+		<Unit filename="include/drawables/ilslib_gradient.hpp" />
+		<Unit filename="include/drawables/ilslib_image.hpp" />
+		<Unit filename="include/drawables/ilslib_rectangle_color.hpp" />
+		<Unit filename="include/drawables/ilslib_text.hpp" />
+		<Unit filename="include/events/ilslib_event.hpp" />
+		<Unit filename="include/events/ilslib_keyboard_event.hpp" />
+		<Unit filename="include/events/ilslib_mouse_button.hpp" />
+		<Unit filename="include/events/ilslib_mouse_event.hpp" />
+		<Unit filename="include/events/ilslib_time_event.hpp" />
+		<Unit filename="include/events/ilslib_window_event.hpp" />
+		<Unit filename="include/ilslib.hpp" />
+		<Unit filename="include/listeners/ilslib_keyboard_listener.hpp" />
+		<Unit filename="include/listeners/ilslib_listener.hpp" />
+		<Unit filename="include/listeners/ilslib_mouse_listener.hpp" />
+		<Unit filename="include/listeners/ilslib_time_listener.hpp" />
+		<Unit filename="include/listeners/ilslib_window_listener.hpp" />
+		<Unit filename="include/other/ilslib_block_manager.hpp" />
+		<Unit filename="include/other/ilslib_draw_wizard.hpp" />
+		<Unit filename="include/other/ilslib_drawable_map.hpp" />
+		<Unit filename="include/other/ilslib_event_queue.hpp" />
+		<Unit filename="include/other/ilslib_listener_manager.hpp" />
+		<Unit filename="include/other/ilslib_listener_optimizer.hpp" />
+		<Unit filename="include/other/ilslib_resource_manager.hpp" />
+		<Unit filename="include/resources/ilslib_font.hpp" />
+		<Unit filename="include/resources/ilslib_resource.hpp" />
+		<Unit filename="include/resources/ilslib_texture.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_adapter.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_draw_wizard.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_font.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_parser.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_resource_manager.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_texture.hpp" />
+		<Unit filename="include/sfml_adapter/ilslibsfml_window.hpp" />
+		<Unit filename="src/base/ilslib_color.cpp" />
+		<Unit filename="src/base/ilslib_rectangle.cpp" />
+		<Unit filename="src/base/ilslib_support.cpp" />
+		<Unit filename="src/base/ilslib_vector.cpp" />
+		<Unit filename="src/blocks/dpinfo/ilslib_dimensions_info.cpp" />
+		<Unit filename="src/blocks/dpinfo/ilslib_dimensions_mapper.cpp" />
+		<Unit filename="src/blocks/dpinfo/ilslib_position_info.cpp" />
+		<Unit filename="src/blocks/dpinfo/ilslib_position_mapper.cpp" />
+		<Unit filename="src/blocks/ilslib_basic_block.cpp" />
+		<Unit filename="src/blocks/ilslib_bg_color_gradient.cpp" />
+		<Unit filename="src/blocks/ilslib_component.cpp" />
+		<Unit filename="src/blocks/ilslib_container.cpp" />
+		<Unit filename="src/blocks/ilslib_container_style.cpp" />
+		<Unit filename="src/blocks/ilslib_flow_container.cpp" />
+		<Unit filename="src/blocks/ilslib_selector.cpp" />
+		<Unit filename="src/blocks/settings/ilslib_component_settings.cpp" />
+		<Unit filename="src/blocks/settings/ilslib_container_settings.cpp" />
+		<Unit filename="src/blocks/settings/ilslib_flow_container_settings.cpp" />
+		<Unit filename="src/blocks/settings/ilslib_settings.cpp" />
+		<Unit filename="src/components/ilslib_image_component.cpp" />
+		<Unit filename="src/components/ilslib_text_component.cpp" />
+		<Unit filename="src/drawables/adjustment_results/ilslib_adjustment_results.cpp" />
+		<Unit filename="src/drawables/adjustment_results/ilslib_gradient_ar.cpp" />
+		<Unit filename="src/drawables/adjustment_results/ilslib_image_ar.cpp" />
+		<Unit filename="src/drawables/adjustment_results/ilslib_rectangle_color_ar.cpp" />
+		<Unit filename="src/drawables/adjustment_results/ilslib_text_ar.cpp" />
+		<Unit filename="src/drawables/ilslib_drawable.cpp" />
+		<Unit filename="src/drawables/ilslib_gradient.cpp" />
+		<Unit filename="src/drawables/ilslib_image.cpp" />
+		<Unit filename="src/drawables/ilslib_rectangle_color.cpp" />
+		<Unit filename="src/drawables/ilslib_text.cpp" />
+		<Unit filename="src/events/ilslib_event.cpp" />
+		<Unit filename="src/events/ilslib_keyboard_event.cpp" />
+		<Unit filename="src/events/ilslib_mouse_button.cpp" />
+		<Unit filename="src/events/ilslib_mouse_event.cpp" />
+		<Unit filename="src/events/ilslib_time_event.cpp" />
+		<Unit filename="src/events/ilslib_window_event.cpp" />
+		<Unit filename="src/listeners/ilslib_keyboard_listener.cpp" />
+		<Unit filename="src/listeners/ilslib_listener.cpp" />
+		<Unit filename="src/listeners/ilslib_mouse_listener.cpp" />
+		<Unit filename="src/listeners/ilslib_time_listener.cpp" />
+		<Unit filename="src/listeners/ilslib_window_listener.cpp" />
+		<Unit filename="src/other/ilslib_block_manager.cpp" />
+		<Unit filename="src/other/ilslib_draw_wizard.cpp" />
+		<Unit filename="src/other/ilslib_drawable_map.cpp" />
+		<Unit filename="src/other/ilslib_event_queue.cpp" />
+		<Unit filename="src/other/ilslib_listener_manager.cpp" />
+		<Unit filename="src/other/ilslib_listener_optimizer.cpp" />
+		<Unit filename="src/other/ilslib_resource_manager.cpp" />
+		<Unit filename="src/resources/ilslib_font.cpp" />
+		<Unit filename="src/resources/ilslib_resource.cpp" />
+		<Unit filename="src/resources/ilslib_texture.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_draw_wizard.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_font.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_parser.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_resource_manager.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_texture.cpp" />
+		<Unit filename="src/sfml_adapter/ilslibsfml_window.cpp" />
+		<Unit filename="tests/include/ilslib_tests.hpp" />
+		<Unit filename="tests/include/ilslib_tests2.hpp" />
+		<Unit filename="tests/src/ilslib_tests.cpp" />
+		<Unit filename="tests/src/ilslib_tests2.cpp" />
+		<Unit filename="tests/src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

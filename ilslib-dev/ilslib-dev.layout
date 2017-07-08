@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src\base\ilslib_color.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="721" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="tests\src\ilslib_tests2.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7931" topLine="183" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_container_style.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2192" topLine="63" />
+		</Cursor>
+	</File>
+	<File name="src\listeners\ilslib_time_listener.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1122" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="tests\src\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4412" topLine="144" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_flow_container.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1707" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="src\base\ilslib_support.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="673" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_selector.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1872" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="src\other\ilslib_block_manager.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10283" topLine="387" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\settings\ilslib_component_settings.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="612" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\settings\ilslib_container_settings.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="662" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\dpinfo\ilslib_dimensions_mapper.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2097" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\settings\ilslib_flow_container_settings.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="54" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\settings\ilslib_flow_container_settings.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="103" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\listeners\ilslib_keyboard_listener.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1649" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="src\other\ilslib_event_queue.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1208" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\settings\ilslib_settings.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="748" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\settings\ilslib_settings.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2756" topLine="105" />
+		</Cursor>
+	</File>
+	<File name="include\listeners\ilslib_listener.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1834" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="src\other\ilslib_listener_manager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1970" topLine="57" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\dpinfo\ilslib_position_mapper.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="429" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\components\ilslib_image_component.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="831" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="include\listeners\ilslib_mouse_listener.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1182" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="src\other\ilslib_listener_optimizer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5264" topLine="197" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_basic_block.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3125" topLine="132" />
+		</Cursor>
+	</File>
+	<File name="src\components\ilslib_text_component.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="919" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="include\components\ilslib_text_component.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1140" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="include\listeners\ilslib_time_listener.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1769" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\other\ilslib_resource_manager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_bg_color_gradient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1039" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include\listeners\ilslib_window_listener.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1177" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_component.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="538" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="include\other\ilslib_block_manager.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2468" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_container.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2515" topLine="105" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_container_style.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8639" topLine="226" />
+		</Cursor>
+	</File>
+	<File name="src\sfml_adapter\ilslibsfml_draw_wizard.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8608" topLine="251" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_flow_container.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14651" topLine="464" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_block_collection_template.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4332" topLine="192" />
+		</Cursor>
+	</File>
+	<File name="src\drawables\adjustment_results\ilslib_text_ar.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="456" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include\drawables\adjustment_results\ilslib_text_ar.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1433" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="include\other\ilslib_event_queue.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1903" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\sfml_adapter\ilslibsfml_font.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="552" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\ilslib_selector.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="796" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_const_iterator.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="568" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\other\ilslib_listener_manager.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1294" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="src\sfml_adapter\ilslibsfml_parser.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2934" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_const_iterator_template.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1799" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="include\drawables\ilslib_gradient.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1256" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include\other\ilslib_listener_optimizer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2782" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="src\sfml_adapter\ilslibsfml_resource_manager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3016" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\blocks\settings\ilslib_container_settings.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2091" topLine="67" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_filter.hpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1298" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="include\other\ilslib_resource_manager.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1318" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_filter_template.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1098" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="include\resources\ilslib_font.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1297" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_iterator.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="834" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include\drawables\ilslib_text.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="666" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_iterator_template.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1503" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\events\ilslib_event.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="892" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="include\events\ilslib_event.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="824" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="include\base\ilslib_support_template.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1939" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\dpinfo\ilslib_dimensions_info.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="837" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="src\events\ilslib_keyboard_event.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="881" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include\events\ilslib_keyboard_event.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2226" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\dpinfo\ilslib_dimensions_mapper.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1261" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="include\events\ilslib_mouse_button.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1226" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\sfml_adapter\ilslibsfml_draw_wizard.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1473" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\collections\ilslib_block_collection.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1903" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="src\events\ilslib_mouse_event.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2824" topLine="84" />
+		</Cursor>
+	</File>
+	<File name="include\events\ilslib_mouse_event.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2971" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="include\sfml_adapter\ilslibsfml_font.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1392" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="include\base\ilslib_color.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1075" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\dpinfo\ilslib_position_mapper.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1198" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="include\sfml_adapter\ilslibsfml_parser.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3499" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="src\sfml_adapter\ilslibsfml_window.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1009" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_basic_block.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1915" topLine="85" />
+		</Cursor>
+	</File>
+	<File name="include\sfml_adapter\ilslibsfml_resource_manager.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="582" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="include\base\ilslib_support.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="529" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="tests\include\ilslib_tests.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="445" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_bg_color_gradient.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1224" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="src\listeners\ilslib_keyboard_listener.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1252" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_component.hpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1579" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="src\listeners\ilslib_listener.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1076" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="include\sfml_adapter\ilslibsfml_window.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1851" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="tests\src\ilslib_tests.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4844" topLine="119" />
+		</Cursor>
+	</File>
+	<File name="include\blocks\ilslib_container.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1512" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="src\listeners\ilslib_mouse_listener.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1370" topLine="33" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

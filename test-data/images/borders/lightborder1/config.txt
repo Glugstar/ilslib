@@ -1,0 +1,5 @@
+textSpacingX = 10;
+textSpacingY = 17;
+backgroundSpacingX = 5;
+backgroundSpacingY = 5;
+backgroundTransparency = 64;
