@@ -1,3 +1,6 @@
+# External libs
+ilslib-dev/external-libs/
+
 # Prerequisites
 *.d
 

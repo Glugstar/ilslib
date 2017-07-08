@@ -1,0 +1,1210 @@
+# depslib dependency file v1.0
+1470919755 source:./current/lib/main.cpp
+	"include/sfml_adapter/ilslibsfml_adapter.hpp"
+
+1470840477 ./current/lib/include/sfml_adapter/ilslibsfml_adapter.hpp
+	"ilslibsfml_window.hpp"
+
+1470841279 ./current/lib/include/sfml_adapter/ilslibsfml_window.hpp
+	"ilslibsfml_draw_wizard.hpp"
+	"ilslibsfml_parser.hpp"
+	"ilslibsfml_resource_manager.hpp"
+
+1470561461 ./current/lib/include/sfml_adapter/ilslibsfml_draw_wizard.hpp
+	<SFML/Graphics.hpp>
+	"../other/ilslib_draw_wizard.hpp"
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/View.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1374390132 ./external-libs/sfml-2.1/include/sfml/config.hpp
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/export.hpp
+	<SFML/Config.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/time.hpp
+	<SFML/System/Export.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1368099372 ./external-libs/sfml-2.1/include/sfml/system/inputstream.hpp
+	<SFML/Config.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/string.hpp
+	<SFML/System/Export.hpp>
+	<locale>
+	<string>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/thread.inl
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/threadlocalptr.inl
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1372053422 ./external-libs/sfml-2.1/include/sfml/system/utf.inl
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/vector2.inl
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/system/vector3.inl
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/export.hpp
+	<SFML/Config.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/glresource.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/contextsettings.hpp
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/joystick.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1371061192 ./external-libs/sfml-2.1/include/sfml/window/window.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/windowhandle.hpp
+	<SFML/Config.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/window/windowstyle.hpp
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/blendmode.hpp
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/export.hpp
+	<SFML/Config.hpp>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1368305601 ./external-libs/sfml-2.1/include/sfml/graphics/rect.inl
+
+1367997280 ./external-libs/sfml-2.1/include/sfml/graphics/texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1368172116 ./external-libs/sfml-2.1/include/sfml/graphics/image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1367997280 ./external-libs/sfml-2.1/include/sfml/graphics/transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 ./external-libs/sfml-2.1/include/sfml/graphics/view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/primitivetype.hpp
+
+1367997280 ./external-libs/sfml-2.1/include/sfml/graphics/vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1371547273 ./external-libs/sfml-2.1/include/sfml/graphics/shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1368255064 ./external-libs/sfml-2.1/include/sfml/graphics/transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1367997280 ./external-libs/sfml-2.1/include/sfml/graphics/vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1367997278 ./external-libs/sfml-2.1/include/sfml/graphics/convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1367997279 ./external-libs/sfml-2.1/include/sfml/graphics/sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1367997280 ./external-libs/sfml-2.1/include/sfml/graphics/text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1467820398 ./current/lib/include/other/ilslib_draw_wizard.hpp
+	"ilslib_resource_manager.hpp"
+	"../drawables/ilslib_gradient.hpp"
+	"../drawables/ilslib_image.hpp"
+	"../drawables/ilslib_rectangle_color.hpp"
+	"../drawables/ilslib_text.hpp"
+
+1470331714 ./current/lib/include/other/ilslib_resource_manager.hpp
+	"../resources/ilslib_texture.hpp"
+	"../resources/ilslib_font.hpp"
+
+1470235501 ./current/lib/include/resources/ilslib_texture.hpp
+	"ilslib_resource.hpp"
+
+1468865777 ./current/lib/include/resources/ilslib_resource.hpp
+	"../base/ilslib_support.hpp"
+
+1470228080 ./current/lib/include/base/ilslib_support.hpp
+	<iostream>
+	<sstream>
+	<string>
+	<list>
+	<vector>
+	<tuple>
+	<set>
+	<unordered_set>
+	"ilslib_color.hpp"
+	"ilslib_rectangle.hpp"
+	"ilslib_vector.hpp"
+	"ilslib_support_template.hpp"
+
+1470564705 ./current/lib/include/base/ilslib_color.hpp
+
+1470227978 ./current/lib/include/base/ilslib_rectangle.hpp
+
+1470228019 ./current/lib/include/base/ilslib_vector.hpp
+
+1470228639 ./current/lib/include/base/ilslib_support_template.hpp
+
+1470830633 ./current/lib/include/resources/ilslib_font.hpp
+	"ilslib_resource.hpp"
+
+1454701889 ./current/lib/include/drawables/ilslib_gradient.hpp
+	"adjustment_results/ilslib_gradient_ar.hpp"
+	"ilslib_drawable.hpp"
+
+1454697805 ./current/lib/include/drawables/adjustment_results/ilslib_gradient_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470228440 ./current/lib/include/drawables/adjustment_results/ilslib_adjustment_results.hpp
+	"../../base/ilslib_support.hpp"
+
+1455990187 ./current/lib/include/drawables/ilslib_drawable.hpp
+	"adjustment_results/ilslib_adjustment_results.hpp"
+
+1468931291 ./current/lib/include/drawables/ilslib_image.hpp
+	"adjustment_results/ilslib_image_ar.hpp"
+	"ilslib_drawable.hpp"
+	"../resources/ilslib_texture.hpp"
+
+1470228440 ./current/lib/include/drawables/adjustment_results/ilslib_image_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1455131840 ./current/lib/include/drawables/ilslib_rectangle_color.hpp
+	"adjustment_results/ilslib_rectangle_color_ar.hpp"
+	"ilslib_drawable.hpp"
+
+1455132086 ./current/lib/include/drawables/adjustment_results/ilslib_rectangle_color_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470563714 ./current/lib/include/drawables/ilslib_text.hpp
+	"adjustment_results/ilslib_text_ar.hpp"
+	"ilslib_drawable.hpp"
+	"../resources/ilslib_font.hpp"
+
+1470564205 ./current/lib/include/drawables/adjustment_results/ilslib_text_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470837420 ./current/lib/include/sfml_adapter/ilslibsfml_parser.hpp
+	<SFML/Graphics.hpp>
+	"../ilslib.hpp"
+
+1455975992 ./current/lib/include/ilslib.hpp
+	"other/ilslib_block_manager.hpp"
+
+1470828736 ./current/lib/include/other/ilslib_block_manager.hpp
+	"../blocks/ilslib_container.hpp"
+	"../components/ilslib_text_component.hpp"
+	"../components/ilslib_image_component.hpp"
+	"ilslib_event_queue.hpp"
+
+1470329869 ./current/lib/include/blocks/ilslib_container.hpp
+	"ilslib_transition.hpp"
+	"ilslib_container_style.hpp"
+
+1470228456 ./current/lib/include/blocks/ilslib_transition.hpp
+	"ilslib_alternative.hpp"
+
+1470228456 ./current/lib/include/blocks/ilslib_alternative.hpp
+	"ilslib_layer.hpp"
+
+1470228456 ./current/lib/include/blocks/ilslib_layer.hpp
+	"ilslib_basic_block.hpp"
+	"settings/ilslib_container_settings.hpp"
+
+1470228456 ./current/lib/include/blocks/ilslib_basic_block.hpp
+	"collections/ilslib_block_collection.hpp"
+	"../listeners/ilslib_mouse_listener.hpp"
+	"../listeners/ilslib_keyboard_listener.hpp"
+	"../listeners/ilslib_time_listener.hpp"
+	"../listeners/ilslib_window_listener.hpp"
+
+1470220192 ./current/lib/include/blocks/collections/ilslib_block_collection.hpp
+	"../../other/ilslib_drawable_map.hpp"
+	"../settings/ilslib_settings.hpp"
+	"../dpinfo/ilslib_dimensions_mapper.hpp"
+	"../dpinfo/ilslib_position_mapper.hpp"
+	"ilslib_block_collection_template.hpp"
+
+1469474673 ./current/lib/include/other/ilslib_drawable_map.hpp
+	"ilslib_draw_wizard.hpp"
+
+1470829055 ./current/lib/include/blocks/settings/ilslib_settings.hpp
+	"../../base/ilslib_support.hpp"
+
+1453898380 ./current/lib/include/blocks/dpinfo/ilslib_dimensions_mapper.hpp
+	"ilslib_dimensions_info.hpp"
+
+1467819776 ./current/lib/include/blocks/dpinfo/ilslib_dimensions_info.hpp
+	"../../base/ilslib_support.hpp"
+
+1455365166 ./current/lib/include/blocks/dpinfo/ilslib_position_mapper.hpp
+	"ilslib_position_info.hpp"
+
+1470228440 ./current/lib/include/blocks/dpinfo/ilslib_position_info.hpp
+	"../../base/ilslib_support.hpp"
+
+1470220236 ./current/lib/include/blocks/collections/ilslib_block_collection_template.hpp
+	"ilslib_const_iterator.hpp"
+	"ilslib_iterator.hpp"
+
+1470153898 ./current/lib/include/blocks/collections/ilslib_const_iterator.hpp
+	"ilslib_block_collection.hpp"
+	"ilslib_const_iterator_template.hpp"
+
+1470157620 ./current/lib/include/blocks/collections/ilslib_const_iterator_template.hpp
+
+1470157058 ./current/lib/include/blocks/collections/ilslib_iterator.hpp
+	"ilslib_block_collection.hpp"
+	"ilslib_iterator_template.hpp"
+
+1470157618 ./current/lib/include/blocks/collections/ilslib_iterator_template.hpp
+
+1468326623 ./current/lib/include/listeners/ilslib_mouse_listener.hpp
+	"ilslib_listener.hpp"
+
+1468326629 ./current/lib/include/listeners/ilslib_listener.hpp
+	"../events/ilslib_keyboard_event.hpp"
+	"../events/ilslib_mouse_event.hpp"
+	"../events/ilslib_time_event.hpp"
+	"../events/ilslib_window_event.hpp"
+
+1470850838 ./current/lib/include/events/ilslib_keyboard_event.hpp
+	"ilslib_event.hpp"
+
+1468327728 ./current/lib/include/events/ilslib_event.hpp
+	"../base/ilslib_support.hpp"
+
+1468161125 ./current/lib/include/events/ilslib_mouse_event.hpp
+	"ilslib_event.hpp"
+	"ilslib_mouse_button.hpp"
+
+1468092337 ./current/lib/include/events/ilslib_mouse_button.hpp
+	"ilslib_event.hpp"
+
+1468142722 ./current/lib/include/events/ilslib_time_event.hpp
+	"ilslib_event.hpp"
+
+1468145071 ./current/lib/include/events/ilslib_window_event.hpp
+	"ilslib_event.hpp"
+
+1468326626 ./current/lib/include/listeners/ilslib_keyboard_listener.hpp
+	"ilslib_listener.hpp"
+
+1468328056 ./current/lib/include/listeners/ilslib_time_listener.hpp
+	"ilslib_listener.hpp"
+
+1468326615 ./current/lib/include/listeners/ilslib_window_listener.hpp
+	"ilslib_listener.hpp"
+
+1470228963 ./current/lib/include/blocks/settings/ilslib_container_settings.hpp
+	"ilslib_settings.hpp"
+
+1470831951 ./current/lib/include/blocks/ilslib_container_style.hpp
+	"../base/ilslib_support.hpp"
+	"ilslib_bg_color_gradient.hpp"
+
+1470331180 ./current/lib/include/blocks/ilslib_bg_color_gradient.hpp
+	"ilslib_container_style.hpp"
+
+1470831366 ./current/lib/include/components/ilslib_text_component.hpp
+	"../blocks/ilslib_component.hpp"
+
+1470831688 ./current/lib/include/blocks/ilslib_component.hpp
+	"ilslib_basic_block.hpp"
+	"settings/ilslib_component_settings.hpp"
+
+1453898381 ./current/lib/include/blocks/settings/ilslib_component_settings.hpp
+	"ilslib_settings.hpp"
+
+1470828601 ./current/lib/include/components/ilslib_image_component.hpp
+	"../blocks/ilslib_component.hpp"
+
+1470839271 ./current/lib/include/other/ilslib_event_queue.hpp
+	"../listeners/ilslib_mouse_listener.hpp"
+	"../listeners/ilslib_keyboard_listener.hpp"
+	"../listeners/ilslib_time_listener.hpp"
+	"../listeners/ilslib_window_listener.hpp"
+
+1470561663 ./current/lib/include/sfml_adapter/ilslibsfml_resource_manager.hpp
+	<SFML/Graphics.hpp>
+	"../other/ilslib_resource_manager.hpp"
+	"ilslibsfml_texture.hpp"
+	"ilslibsfml_font.hpp"
+
+1470561425 ./current/lib/include/sfml_adapter/ilslibsfml_texture.hpp
+	<SFML/Graphics.hpp>
+	"../../include/resources/ilslib_texture.hpp"
+
+1470830609 ./current/lib/include/sfml_adapter/ilslibsfml_font.hpp
+	<SFML/Graphics.hpp>
+	"../../include/resources/ilslib_font.hpp"
+
+1470564693 source:./current/lib/src/base/ilslib_color.cpp
+	"../../include/base/ilslib_color.hpp"
+
+1470228358 source:./current/lib/src/base/ilslib_rectangle.cpp
+	"../../include/base/ilslib_rectangle.hpp"
+
+1470228320 source:./current/lib/src/base/ilslib_vector.cpp
+	"../../include/base/ilslib_vector.hpp"
+
+1453898381 source:./current/lib/src/blocks/dpinfo/ilslib_dimensions_info.cpp
+	"../../../include/blocks/dpinfo/ilslib_dimensions_info.hpp"
+
+1453898381 source:./current/lib/src/blocks/dpinfo/ilslib_dimensions_mapper.cpp
+	"../../../include/blocks/dpinfo/ilslib_dimensions_mapper.hpp"
+
+1469807037 source:./current/lib/src/blocks/dpinfo/ilslib_position_info.cpp
+	"../../../include/blocks/dpinfo/ilslib_position_info.hpp"
+
+1469807081 source:./current/lib/src/blocks/dpinfo/ilslib_position_mapper.cpp
+	"../../../include/blocks/dpinfo/ilslib_position_mapper.hpp"
+
+1470229061 source:./current/lib/src/blocks/ilslib_alternative.cpp
+	"../../include/blocks/ilslib_alternative.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1470228456 source:./current/lib/src/blocks/ilslib_basic_block.cpp
+	"../../include/blocks/ilslib_basic_block.hpp"
+	"../../include/blocks/ilslib_layer.hpp"
+	"../../include/other/ilslib_event_queue.hpp"
+
+1470331209 source:./current/lib/src/blocks/ilslib_bg_color_gradient.cpp
+	"../../include/blocks/ilslib_bg_color_gradient.hpp"
+	"../../include/resources/ilslib_texture.hpp"
+
+1470831600 source:./current/lib/src/blocks/ilslib_component.cpp
+	"../../include/blocks/ilslib_component.hpp"
+
+1470228456 source:./current/lib/src/blocks/ilslib_container.cpp
+	"../../include/blocks/ilslib_container.hpp"
+
+1470831962 source:./current/lib/src/blocks/ilslib_container_style.cpp
+	"../../include/blocks/ilslib_container_style.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1470229369 source:./current/lib/src/blocks/ilslib_layer.cpp
+	"../../include/blocks/ilslib_layer.hpp"
+	"../../include/blocks/ilslib_alternative.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1470229198 source:./current/lib/src/blocks/ilslib_transition.cpp
+	"../../include/blocks/ilslib_transition.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1453898381 source:./current/lib/src/blocks/settings/ilslib_component_settings.cpp
+	"../../../include/blocks/settings/ilslib_component_settings.hpp"
+
+1470229004 source:./current/lib/src/blocks/settings/ilslib_container_settings.cpp
+	"../../../include/blocks/settings/ilslib_container_settings.hpp"
+	"../../../include/blocks/ilslib_container_style.hpp"
+
+1470829098 source:./current/lib/src/blocks/settings/ilslib_settings.cpp
+	"../../../include/blocks/settings/ilslib_settings.hpp"
+
+1470828676 source:./current/lib/src/components/ilslib_image_component.cpp
+	"../../include/components/ilslib_image_component.hpp"
+
+1470848931 source:./current/lib/src/components/ilslib_text_component.cpp
+	"../../include/components/ilslib_text_component.hpp"
+
+1455369859 source:./current/lib/src/drawables/adjustment_results/ilslib_adjustment_results.cpp
+	"../../../include/drawables/adjustment_results/ilslib_adjustment_results.hpp"
+
+1454698534 source:./current/lib/src/drawables/adjustment_results/ilslib_gradient_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_gradient_ar.hpp"
+
+1455369879 source:./current/lib/src/drawables/adjustment_results/ilslib_image_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_image_ar.hpp"
+
+1455131683 source:./current/lib/src/drawables/adjustment_results/ilslib_rectangle_color_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_rectangle_color_ar.hpp"
+
+1470564213 source:./current/lib/src/drawables/adjustment_results/ilslib_text_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_text_ar.hpp"
+
+1454697972 source:./current/lib/src/drawables/ilslib_drawable.cpp
+	"../../include/drawables/ilslib_drawable.hpp"
+
+1454701249 source:./current/lib/src/drawables/ilslib_gradient.cpp
+	"../../include/drawables/ilslib_gradient.hpp"
+
+1468931559 source:./current/lib/src/drawables/ilslib_image.cpp
+	"../../include/drawables/ilslib_image.hpp"
+
+1455131885 source:./current/lib/src/drawables/ilslib_rectangle_color.cpp
+	"../../include/drawables/ilslib_rectangle_color.hpp"
+
+1470563732 source:./current/lib/src/drawables/ilslib_text.cpp
+	"../../include/drawables/ilslib_text.hpp"
+
+1468328307 source:./current/lib/src/events/ilslib_event.cpp
+	"../../include/events/ilslib_event.hpp"
+
+1468142022 source:./current/lib/src/events/ilslib_keyboard_event.cpp
+	"../../include/events/ilslib_keyboard_event.hpp"
+
+1468091425 source:./current/lib/src/events/ilslib_mouse_button.cpp
+	"../../include/events/ilslib_mouse_button.hpp"
+
+1469812386 source:./current/lib/src/events/ilslib_mouse_event.cpp
+	"../../include/events/ilslib_mouse_event.hpp"
+	"../../include/blocks/dpinfo/ilslib_position_info.hpp"
+
+1468142758 source:./current/lib/src/events/ilslib_time_event.cpp
+	"../../include/events/ilslib_time_event.hpp"
+
+1468145143 source:./current/lib/src/events/ilslib_window_event.cpp
+	"../../include/events/ilslib_window_event.hpp"
+
+1468326706 source:./current/lib/src/listeners/ilslib_keyboard_listener.cpp
+	"../../include/listeners/ilslib_keyboard_listener.hpp"
+
+1468326548 source:./current/lib/src/listeners/ilslib_listener.cpp
+	"../../include/listeners/ilslib_listener.hpp"
+
+1468326703 source:./current/lib/src/listeners/ilslib_mouse_listener.cpp
+	"../../include/listeners/ilslib_mouse_listener.hpp"
+
+1468328234 source:./current/lib/src/listeners/ilslib_time_listener.cpp
+	"../../include/listeners/ilslib_time_listener.hpp"
+
+1468326695 source:./current/lib/src/listeners/ilslib_window_listener.cpp
+	"../../include/listeners/ilslib_window_listener.hpp"
+
+1470233768 source:./current/lib/src/other/ilslib_block_manager.cpp
+	"../../include/other/ilslib_block_manager.hpp"
+
+1454701828 source:./current/lib/src/other/ilslib_draw_wizard.cpp
+	"../../include/other/ilslib_draw_wizard.hpp"
+
+1469474676 source:./current/lib/src/other/ilslib_drawable_map.cpp
+	"../../include/other/ilslib_drawable_map.hpp"
+
+1470840828 source:./current/lib/src/other/ilslib_event_queue.cpp
+	"../../include/other/ilslib_event_queue.hpp"
+	"../../include/other/ilslib_block_manager.hpp"
+
+1470331774 source:./current/lib/src/other/ilslib_resource_manager.cpp
+	"../../include/other/ilslib_resource_manager.hpp"
+
+1455983781 source:./current/lib/src/resources/ilslib_font.cpp
+	"../../include/resources/ilslib_font.hpp"
+
+1468867128 source:./current/lib/src/resources/ilslib_resource.cpp
+	"../../include/resources/ilslib_resource.hpp"
+
+1455983801 source:./current/lib/src/resources/ilslib_texture.cpp
+	"../../include/resources/ilslib_texture.hpp"
+
+1470564763 source:./current/lib/src/sfml_adapter/ilslibsfml_draw_wizard.cpp
+	"../../include/sfml_adapter/ilslibsfml_draw_wizard.hpp"
+
+1470830744 source:./current/lib/src/sfml_adapter/ilslibsfml_font.cpp
+	"../../include/sfml_adapter/ilslibsfml_font.hpp"
+
+1470837441 source:./current/lib/src/sfml_adapter/ilslibsfml_parser.cpp
+	"../../include/sfml_adapter/ilslibsfml_parser.hpp"
+
+1470561871 source:./current/lib/src/sfml_adapter/ilslibsfml_resource_manager.cpp
+	"../../include/sfml_adapter/ilslibsfml_resource_manager.hpp"
+
+1470236145 source:./current/lib/src/sfml_adapter/ilslibsfml_texture.cpp
+	"../../include/sfml_adapter/ilslibsfml_texture.hpp"
+
+1470848999 source:./current/lib/src/sfml_adapter/ilslibsfml_window.cpp
+	"../../include/sfml_adapter/ilslibsfml_window.hpp"
+
+1470920857 source:./dev/main.cpp
+	"include/ilslib.hpp"
+	"include/sfml_adapter/ilslibsfml_adapter.hpp"
+
+1455975992 ./dev/include/ilslib.hpp
+	"other/ilslib_block_manager.hpp"
+
+1471540657 ./dev/include/other/ilslib_block_manager.hpp
+	"../blocks/ilslib_container.hpp"
+	"../components/ilslib_text_component.hpp"
+	"../components/ilslib_image_component.hpp"
+	"ilslib_event_queue.hpp"
+
+1471540499 ./dev/include/blocks/ilslib_container.hpp
+	"ilslib_transition.hpp"
+	"ilslib_container_style.hpp"
+
+1470228456 ./dev/include/blocks/ilslib_transition.hpp
+	"ilslib_alternative.hpp"
+
+1471540409 ./dev/include/blocks/ilslib_alternative.hpp
+	"ilslib_layer.hpp"
+
+1471542437 ./dev/include/blocks/ilslib_layer.hpp
+	"ilslib_basic_block.hpp"
+	"settings/ilslib_container_settings.hpp"
+
+1471007478 ./dev/include/blocks/ilslib_basic_block.hpp
+	"collections/ilslib_block_collection.hpp"
+	"../listeners/ilslib_mouse_listener.hpp"
+	"../listeners/ilslib_keyboard_listener.hpp"
+	"../listeners/ilslib_time_listener.hpp"
+	"../listeners/ilslib_window_listener.hpp"
+
+1470220192 ./dev/include/blocks/collections/ilslib_block_collection.hpp
+	"../../other/ilslib_drawable_map.hpp"
+	"../settings/ilslib_settings.hpp"
+	"../dpinfo/ilslib_dimensions_mapper.hpp"
+	"../dpinfo/ilslib_position_mapper.hpp"
+	"ilslib_block_collection_template.hpp"
+
+1469474673 ./dev/include/other/ilslib_drawable_map.hpp
+	"ilslib_draw_wizard.hpp"
+
+1467820398 ./dev/include/other/ilslib_draw_wizard.hpp
+	"ilslib_resource_manager.hpp"
+	"../drawables/ilslib_gradient.hpp"
+	"../drawables/ilslib_image.hpp"
+	"../drawables/ilslib_rectangle_color.hpp"
+	"../drawables/ilslib_text.hpp"
+
+1471116508 ./dev/include/other/ilslib_resource_manager.hpp
+	"../resources/ilslib_texture.hpp"
+	"../resources/ilslib_font.hpp"
+
+1470235501 ./dev/include/resources/ilslib_texture.hpp
+	"ilslib_resource.hpp"
+
+1468865777 ./dev/include/resources/ilslib_resource.hpp
+	"../base/ilslib_support.hpp"
+
+1470228080 ./dev/include/base/ilslib_support.hpp
+	<iostream>
+	<sstream>
+	<string>
+	<list>
+	<vector>
+	<tuple>
+	<set>
+	<unordered_set>
+	"ilslib_color.hpp"
+	"ilslib_rectangle.hpp"
+	"ilslib_vector.hpp"
+	"ilslib_support_template.hpp"
+
+1471078767 ./dev/include/base/ilslib_color.hpp
+
+1470227978 ./dev/include/base/ilslib_rectangle.hpp
+
+1470228019 ./dev/include/base/ilslib_vector.hpp
+
+1470228639 ./dev/include/base/ilslib_support_template.hpp
+
+1470999487 ./dev/include/resources/ilslib_font.hpp
+	"ilslib_resource.hpp"
+
+1454701889 ./dev/include/drawables/ilslib_gradient.hpp
+	"adjustment_results/ilslib_gradient_ar.hpp"
+	"ilslib_drawable.hpp"
+
+1454697805 ./dev/include/drawables/adjustment_results/ilslib_gradient_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470228440 ./dev/include/drawables/adjustment_results/ilslib_adjustment_results.hpp
+	"../../base/ilslib_support.hpp"
+
+1455990187 ./dev/include/drawables/ilslib_drawable.hpp
+	"adjustment_results/ilslib_adjustment_results.hpp"
+
+1468931291 ./dev/include/drawables/ilslib_image.hpp
+	"adjustment_results/ilslib_image_ar.hpp"
+	"ilslib_drawable.hpp"
+	"../resources/ilslib_texture.hpp"
+
+1470228440 ./dev/include/drawables/adjustment_results/ilslib_image_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1455131840 ./dev/include/drawables/ilslib_rectangle_color.hpp
+	"adjustment_results/ilslib_rectangle_color_ar.hpp"
+	"ilslib_drawable.hpp"
+
+1455132086 ./dev/include/drawables/adjustment_results/ilslib_rectangle_color_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470563714 ./dev/include/drawables/ilslib_text.hpp
+	"adjustment_results/ilslib_text_ar.hpp"
+	"ilslib_drawable.hpp"
+	"../resources/ilslib_font.hpp"
+
+1470564205 ./dev/include/drawables/adjustment_results/ilslib_text_ar.hpp
+	"ilslib_adjustment_results.hpp"
+
+1470829055 ./dev/include/blocks/settings/ilslib_settings.hpp
+	"../../base/ilslib_support.hpp"
+
+1471010227 ./dev/include/blocks/dpinfo/ilslib_dimensions_mapper.hpp
+	"ilslib_dimensions_info.hpp"
+
+1467819776 ./dev/include/blocks/dpinfo/ilslib_dimensions_info.hpp
+	"../../base/ilslib_support.hpp"
+
+1455365166 ./dev/include/blocks/dpinfo/ilslib_position_mapper.hpp
+	"ilslib_position_info.hpp"
+
+1470228440 ./dev/include/blocks/dpinfo/ilslib_position_info.hpp
+	"../../base/ilslib_support.hpp"
+
+1470220236 ./dev/include/blocks/collections/ilslib_block_collection_template.hpp
+	"ilslib_const_iterator.hpp"
+	"ilslib_iterator.hpp"
+
+1470153898 ./dev/include/blocks/collections/ilslib_const_iterator.hpp
+	"ilslib_block_collection.hpp"
+	"ilslib_const_iterator_template.hpp"
+
+1470157620 ./dev/include/blocks/collections/ilslib_const_iterator_template.hpp
+
+1470157058 ./dev/include/blocks/collections/ilslib_iterator.hpp
+	"ilslib_block_collection.hpp"
+	"ilslib_iterator_template.hpp"
+
+1470157618 ./dev/include/blocks/collections/ilslib_iterator_template.hpp
+
+1471088123 ./dev/include/listeners/ilslib_mouse_listener.hpp
+	"ilslib_listener.hpp"
+
+1471086718 ./dev/include/listeners/ilslib_listener.hpp
+	"../events/ilslib_keyboard_event.hpp"
+	"../events/ilslib_mouse_event.hpp"
+	"../events/ilslib_time_event.hpp"
+	"../events/ilslib_window_event.hpp"
+
+1470850838 ./dev/include/events/ilslib_keyboard_event.hpp
+	"ilslib_event.hpp"
+
+1471080531 ./dev/include/events/ilslib_event.hpp
+	"../base/ilslib_support.hpp"
+
+1471027902 ./dev/include/events/ilslib_mouse_event.hpp
+	"ilslib_event.hpp"
+	"ilslib_mouse_button.hpp"
+
+1468092337 ./dev/include/events/ilslib_mouse_button.hpp
+	"ilslib_event.hpp"
+
+1468142722 ./dev/include/events/ilslib_time_event.hpp
+	"ilslib_event.hpp"
+
+1468145071 ./dev/include/events/ilslib_window_event.hpp
+	"ilslib_event.hpp"
+
+1471088085 ./dev/include/listeners/ilslib_keyboard_listener.hpp
+	"ilslib_listener.hpp"
+
+1468328056 ./dev/include/listeners/ilslib_time_listener.hpp
+	"ilslib_listener.hpp"
+
+1468326615 ./dev/include/listeners/ilslib_window_listener.hpp
+	"ilslib_listener.hpp"
+
+1470228963 ./dev/include/blocks/settings/ilslib_container_settings.hpp
+	"ilslib_settings.hpp"
+
+1471118560 ./dev/include/blocks/ilslib_container_style.hpp
+	"../base/ilslib_support.hpp"
+	"ilslib_bg_color_gradient.hpp"
+
+1471079098 ./dev/include/blocks/ilslib_bg_color_gradient.hpp
+	"ilslib_container_style.hpp"
+
+1470938426 ./dev/include/components/ilslib_text_component.hpp
+	"../blocks/ilslib_component.hpp"
+
+1471007485 ./dev/include/blocks/ilslib_component.hpp
+	"ilslib_basic_block.hpp"
+	"settings/ilslib_component_settings.hpp"
+
+1453898381 ./dev/include/blocks/settings/ilslib_component_settings.hpp
+	"ilslib_settings.hpp"
+
+1470828601 ./dev/include/components/ilslib_image_component.hpp
+	"../blocks/ilslib_component.hpp"
+
+1470839271 ./dev/include/other/ilslib_event_queue.hpp
+	"../listeners/ilslib_mouse_listener.hpp"
+	"../listeners/ilslib_keyboard_listener.hpp"
+	"../listeners/ilslib_time_listener.hpp"
+	"../listeners/ilslib_window_listener.hpp"
+
+1470840477 ./dev/include/sfml_adapter/ilslibsfml_adapter.hpp
+	"ilslibsfml_window.hpp"
+
+1471176162 ./dev/include/sfml_adapter/ilslibsfml_window.hpp
+	"ilslibsfml_draw_wizard.hpp"
+	"ilslibsfml_parser.hpp"
+	"ilslibsfml_resource_manager.hpp"
+
+1470938847 ./dev/include/sfml_adapter/ilslibsfml_draw_wizard.hpp
+	<SFML/Graphics.hpp>
+	"../other/ilslib_draw_wizard.hpp"
+
+1470837420 ./dev/include/sfml_adapter/ilslibsfml_parser.hpp
+	<SFML/Graphics.hpp>
+	"../ilslib.hpp"
+
+1471116503 ./dev/include/sfml_adapter/ilslibsfml_resource_manager.hpp
+	<SFML/Graphics.hpp>
+	"../other/ilslib_resource_manager.hpp"
+	"ilslibsfml_texture.hpp"
+	"ilslibsfml_font.hpp"
+
+1470561425 ./dev/include/sfml_adapter/ilslibsfml_texture.hpp
+	<SFML/Graphics.hpp>
+	"../../include/resources/ilslib_texture.hpp"
+
+1470999502 ./dev/include/sfml_adapter/ilslibsfml_font.hpp
+	<SFML/Graphics.hpp>
+	"../../include/resources/ilslib_font.hpp"
+
+1471079009 source:./dev/src/base/ilslib_color.cpp
+	"../../include/base/ilslib_color.hpp"
+
+1470228358 source:./dev/src/base/ilslib_rectangle.cpp
+	"../../include/base/ilslib_rectangle.hpp"
+
+1470228320 source:./dev/src/base/ilslib_vector.cpp
+	"../../include/base/ilslib_vector.hpp"
+
+1453898381 source:./dev/src/blocks/dpinfo/ilslib_dimensions_info.cpp
+	"../../../include/blocks/dpinfo/ilslib_dimensions_info.hpp"
+
+1471010222 source:./dev/src/blocks/dpinfo/ilslib_dimensions_mapper.cpp
+	"../../../include/blocks/dpinfo/ilslib_dimensions_mapper.hpp"
+
+1469807037 source:./dev/src/blocks/dpinfo/ilslib_position_info.cpp
+	"../../../include/blocks/dpinfo/ilslib_position_info.hpp"
+
+1469807081 source:./dev/src/blocks/dpinfo/ilslib_position_mapper.cpp
+	"../../../include/blocks/dpinfo/ilslib_position_mapper.hpp"
+
+1471540516 source:./dev/src/blocks/ilslib_alternative.cpp
+	"../../include/blocks/ilslib_alternative.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1471088517 source:./dev/src/blocks/ilslib_basic_block.cpp
+	"../../include/blocks/ilslib_basic_block.hpp"
+	"../../include/blocks/ilslib_layer.hpp"
+	"../../include/other/ilslib_event_queue.hpp"
+
+1471079214 source:./dev/src/blocks/ilslib_bg_color_gradient.cpp
+	"../../include/blocks/ilslib_bg_color_gradient.hpp"
+	"../../include/resources/ilslib_texture.hpp"
+
+1470831600 source:./dev/src/blocks/ilslib_component.cpp
+	"../../include/blocks/ilslib_component.hpp"
+
+1471540528 source:./dev/src/blocks/ilslib_container.cpp
+	"../../include/blocks/ilslib_container.hpp"
+
+1471597516 source:./dev/src/blocks/ilslib_container_style.cpp
+	"../../include/blocks/ilslib_container_style.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1471542524 source:./dev/src/blocks/ilslib_layer.cpp
+	"../../include/blocks/ilslib_layer.hpp"
+	"../../include/blocks/ilslib_alternative.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1471011139 source:./dev/src/blocks/ilslib_transition.cpp
+	"../../include/blocks/ilslib_transition.hpp"
+	"../../include/blocks/ilslib_container.hpp"
+
+1453898381 source:./dev/src/blocks/settings/ilslib_component_settings.cpp
+	"../../../include/blocks/settings/ilslib_component_settings.hpp"
+
+1470229004 source:./dev/src/blocks/settings/ilslib_container_settings.cpp
+	"../../../include/blocks/settings/ilslib_container_settings.hpp"
+	"../../../include/blocks/ilslib_container_style.hpp"
+
+1470829098 source:./dev/src/blocks/settings/ilslib_settings.cpp
+	"../../../include/blocks/settings/ilslib_settings.hpp"
+
+1470828676 source:./dev/src/components/ilslib_image_component.cpp
+	"../../include/components/ilslib_image_component.hpp"
+
+1471000703 source:./dev/src/components/ilslib_text_component.cpp
+	"../../include/components/ilslib_text_component.hpp"
+
+1455369859 source:./dev/src/drawables/adjustment_results/ilslib_adjustment_results.cpp
+	"../../../include/drawables/adjustment_results/ilslib_adjustment_results.hpp"
+
+1454698534 source:./dev/src/drawables/adjustment_results/ilslib_gradient_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_gradient_ar.hpp"
+
+1455369879 source:./dev/src/drawables/adjustment_results/ilslib_image_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_image_ar.hpp"
+
+1455131683 source:./dev/src/drawables/adjustment_results/ilslib_rectangle_color_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_rectangle_color_ar.hpp"
+
+1470564213 source:./dev/src/drawables/adjustment_results/ilslib_text_ar.cpp
+	"../../../include/drawables/adjustment_results/ilslib_text_ar.hpp"
+
+1454697972 source:./dev/src/drawables/ilslib_drawable.cpp
+	"../../include/drawables/ilslib_drawable.hpp"
+
+1454701249 source:./dev/src/drawables/ilslib_gradient.cpp
+	"../../include/drawables/ilslib_gradient.hpp"
+
+1468931559 source:./dev/src/drawables/ilslib_image.cpp
+	"../../include/drawables/ilslib_image.hpp"
+
+1455131885 source:./dev/src/drawables/ilslib_rectangle_color.cpp
+	"../../include/drawables/ilslib_rectangle_color.hpp"
+
+1470563732 source:./dev/src/drawables/ilslib_text.cpp
+	"../../include/drawables/ilslib_text.hpp"
+
+1471080586 source:./dev/src/events/ilslib_event.cpp
+	"../../include/events/ilslib_event.hpp"
+
+1468142022 source:./dev/src/events/ilslib_keyboard_event.cpp
+	"../../include/events/ilslib_keyboard_event.hpp"
+
+1468091425 source:./dev/src/events/ilslib_mouse_button.cpp
+	"../../include/events/ilslib_mouse_button.hpp"
+
+1471027878 source:./dev/src/events/ilslib_mouse_event.cpp
+	"../../include/events/ilslib_mouse_event.hpp"
+	"../../include/blocks/dpinfo/ilslib_position_info.hpp"
+	"../../include//blocks/settings/ilslib_settings.hpp"
+
+1468142758 source:./dev/src/events/ilslib_time_event.cpp
+	"../../include/events/ilslib_time_event.hpp"
+
+1468145143 source:./dev/src/events/ilslib_window_event.cpp
+	"../../include/events/ilslib_window_event.hpp"
+
+1471031169 source:./dev/src/listeners/ilslib_keyboard_listener.cpp
+	"../../include/listeners/ilslib_keyboard_listener.hpp"
+
+1471086830 source:./dev/src/listeners/ilslib_listener.cpp
+	"../../include/listeners/ilslib_listener.hpp"
+
+1471088310 source:./dev/src/listeners/ilslib_mouse_listener.cpp
+	"../../include/listeners/ilslib_mouse_listener.hpp"
+
+1471080615 source:./dev/src/listeners/ilslib_time_listener.cpp
+	"../../include/listeners/ilslib_time_listener.hpp"
+
+1468326695 source:./dev/src/listeners/ilslib_window_listener.cpp
+	"../../include/listeners/ilslib_window_listener.hpp"
+
+1471540474 source:./dev/src/other/ilslib_block_manager.cpp
+	"../../include/other/ilslib_block_manager.hpp"
+
+1454701828 source:./dev/src/other/ilslib_draw_wizard.cpp
+	"../../include/other/ilslib_draw_wizard.hpp"
+
+1469474676 source:./dev/src/other/ilslib_drawable_map.cpp
+	"../../include/other/ilslib_drawable_map.hpp"
+
+1470840828 source:./dev/src/other/ilslib_event_queue.cpp
+	"../../include/other/ilslib_event_queue.hpp"
+	"../../include/other/ilslib_block_manager.hpp"
+
+1470331774 source:./dev/src/other/ilslib_resource_manager.cpp
+	"../../include/other/ilslib_resource_manager.hpp"
+
+1455983781 source:./dev/src/resources/ilslib_font.cpp
+	"../../include/resources/ilslib_font.hpp"
+
+1468867128 source:./dev/src/resources/ilslib_resource.cpp
+	"../../include/resources/ilslib_resource.hpp"
+
+1455983801 source:./dev/src/resources/ilslib_texture.cpp
+	"../../include/resources/ilslib_texture.hpp"
+
+1471000851 source:./dev/src/sfml_adapter/ilslibsfml_draw_wizard.cpp
+	"../../include/sfml_adapter/ilslibsfml_draw_wizard.hpp"
+
+1470999467 source:./dev/src/sfml_adapter/ilslibsfml_font.cpp
+	"../../include/sfml_adapter/ilslibsfml_font.hpp"
+
+1471082418 source:./dev/src/sfml_adapter/ilslibsfml_parser.cpp
+	"../../include/sfml_adapter/ilslibsfml_parser.hpp"
+
+1471117921 source:./dev/src/sfml_adapter/ilslibsfml_resource_manager.cpp
+	"../../include/sfml_adapter/ilslibsfml_resource_manager.hpp"
+
+1470236145 source:./dev/src/sfml_adapter/ilslibsfml_texture.cpp
+	"../../include/sfml_adapter/ilslibsfml_texture.hpp"
+
+1471176233 source:./dev/src/sfml_adapter/ilslibsfml_window.cpp
+	"../../include/sfml_adapter/ilslibsfml_window.hpp"
+
+1470829055 ./dev/include//blocks/settings/ilslib_settings.hpp
+	"../../base/ilslib_support.hpp"
+
+1470228080 ./dev/include//base/ilslib_support.hpp
+	<iostream>
+	<sstream>
+	<string>
+	<list>
+	<vector>
+	<tuple>
+	<set>
+	<unordered_set>
+	"ilslib_color.hpp"
+	"ilslib_rectangle.hpp"
+	"ilslib_vector.hpp"
+	"ilslib_support_template.hpp"
+
+1471078767 ./dev/include//base/ilslib_color.hpp
+
+1470227978 ./dev/include//base/ilslib_rectangle.hpp
+
+1470228019 ./dev/include//base/ilslib_vector.hpp
+
+1470228639 ./dev/include//base/ilslib_support_template.hpp
+
