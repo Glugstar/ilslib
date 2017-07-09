@@ -1,5 +1,7 @@
 # External libs
-ilslib-dev/external-libs/
+external-libs/
+
+# Code Blocks
 
 # Prerequisites
 *.d
@@ -14,20 +16,9 @@ ilslib-dev/external-libs/
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
 # Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
 # Executables
 *.exe
