@@ -1,5 +1,5 @@
-#include "ilslib.hpp"
-#include "sfml_adapter/ilslibsfml_adapter.hpp"
+#include "../../ilslib-dev/include/ilslib.hpp"
+#include "../../ilslib-sfml/include/ilslibsfml_adapter.hpp"
 
 using namespace ILSLib;
 

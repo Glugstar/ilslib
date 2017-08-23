@@ -2,9 +2,7 @@
 external-libs/
 
 # Code Blocks
-ilslib-dev/ilslib-dev.*
-ilslib-sfml/ilslib-sfml.*
-ilslib-tests/ilslib-tests.*
+codeblocks-files/
 
 # Prerequisites
 *.d

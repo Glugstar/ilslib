@@ -1,4 +1,4 @@
-#include "../../include/sfml_adapter/ilslibsfml_resource_manager.hpp"
+#include "../include/ilslibsfml_resource_manager.hpp"
 
 
 
@@ -7,9 +7,9 @@
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	void ResourceManager::loadFont(const std::string& fontID, const std::string& fontPath)
 	{
 		sf::Font* font = new sf::Font();
@@ -28,8 +28,8 @@ namespace ILSLibSFML
 		else
 			delete font;
 	}
-	
-	
+
+
 	void ResourceManager::loadTexture(const std::string& textureID, const std::string& texturePath)
 	{
 		sf::Texture* texture = new sf::Texture();
@@ -49,19 +49,19 @@ namespace ILSLibSFML
 		else
 			delete texture;
 	}
-	
-	
+
+
 	void ResourceManager::loadFrameStyle(const std::string& styleID, const std::string& stylePath,
 										unsigned int nBorders, unsigned int nGradients)
 	{
 		std::list<std::pair<std::string, std::string> > textureList;
 		std::string basePath = stylePath;
-		
+
 		if(basePath.size() == 0)
 			basePath = "/";
 		else if(basePath[basePath.size() - 1] != '/')
 			basePath = stylePath + "/";
-		
+
 		for(unsigned int i=0; i<nBorders; ++i)
 		{
 			std::string tNumber = ILSLib::Support::NumberToString(i);
@@ -75,27 +75,27 @@ namespace ILSLibSFML
 			textureList.push_back(std::pair<std::string, std::string>(styleID + tNumber + "#B", path + "border07B.png"));
 			textureList.push_back(std::pair<std::string, std::string>(styleID + tNumber + "#BR", path + "border08BR.png"));
 		}
-		
+
 		for(unsigned int i=0; i<nGradients; ++i)
 		{
 			std::string tNumber = ILSLib::Support::NumberToString(i);
 			textureList.push_back(std::pair<std::string, std::string>(styleID + tNumber + "#G", basePath + "gradient" + tNumber + ".png"));
 		}
-		
+
 		loadTextures(textureList);
 	}
-	
-	
+
+
 	void ResourceManager::loadTextures(std::list<std::pair<std::string, std::string> >& textureList)
 	{
 		std::list<std::pair<std::string, std::string> >::const_iterator i;
-		
+
 		for(i=textureList.begin(); i!=textureList.end(); ++i)
 			loadTexture(i->first, i->second);
 	}
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 

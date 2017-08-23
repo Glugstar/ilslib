@@ -12,7 +12,7 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../other/ilslib_resource_manager.hpp"
+#include "../../ilslib-dev/include/other/ilslib_resource_manager.hpp"
 #include "ilslibsfml_texture.hpp"
 #include "ilslibsfml_font.hpp"
 
@@ -23,9 +23,9 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 										ResourceManager
 	------------------------------------------------------------------------------------
@@ -43,9 +43,9 @@ namespace ILSLibSFML
 		// functions
 		virtual void loadTextures(std::list<std::pair<std::string, std::string> >& textureList);
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 

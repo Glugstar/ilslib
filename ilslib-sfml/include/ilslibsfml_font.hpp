@@ -12,7 +12,7 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../../include/resources/ilslib_font.hpp"
+#include "../../ilslib-dev/include/resources/ilslib_font.hpp"
 
 
 
@@ -21,9 +21,9 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 											Font
 	------------------------------------------------------------------------------------
@@ -35,15 +35,15 @@ namespace ILSLibSFML
 		// constructors & destructor
 		Font(const std::string& uniqueID, void* uniqueRealResource);
 		virtual ~Font();
-		
-		
+
+
 		// functions
 		virtual ILSLib::Rectangle getTextSize(unsigned int charSize, const std::string& text) const;
 		virtual unsigned int getLineSpacing(unsigned int charSize) const;
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 

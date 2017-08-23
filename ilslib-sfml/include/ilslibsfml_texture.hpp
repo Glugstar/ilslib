@@ -12,7 +12,7 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../../include/resources/ilslib_texture.hpp"
+#include "../../ilslib-dev/include/resources/ilslib_texture.hpp"
 
 
 
@@ -21,9 +21,9 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 										Texture
 	------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ namespace ILSLibSFML
 		// constructors & destructor
 		Texture(const std::string& uniqueID, void* uniqueRealResource);
 		virtual ~Texture();
-		
-		
+
+
 		// functions
 		virtual void removeResource();
 		virtual unsigned int getWidth() const;
@@ -48,9 +48,9 @@ namespace ILSLibSFML
 		sf::Texture* imageRef;
 		sf::Image image;
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 

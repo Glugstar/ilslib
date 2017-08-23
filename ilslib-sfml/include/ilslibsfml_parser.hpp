@@ -12,7 +12,7 @@ ILS (Interface Layout Scheme) library.
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../ilslib.hpp"
+#include "../../ilslib-dev/include/ilslib.hpp"
 
 
 
@@ -21,9 +21,9 @@ ILS (Interface Layout Scheme) library.
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 											Parser
 	------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ namespace ILSLibSFML
 		// constructors & destructor
 		Parser();
 		virtual ~Parser();
-		
-		
+
+
 		// functions
 		virtual sf::Time getTime() const;
 		virtual void resetEverything();
@@ -53,8 +53,8 @@ namespace ILSLibSFML
 		int maxClickDistancePixels;
 		int lastMouseCoordX;
 		int lastMouseCoordY;
-		
-		
+
+
 		// functions
 		virtual void parseNoEvent(const std::string& root, sf::Time eventTime,
 					ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
@@ -74,7 +74,7 @@ namespace ILSLibSFML
 					ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
 		virtual void parseMouseWheelMoved(const std::string& root, const sf::Event& event, sf::Time eventTime,
 					ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
-		
+
 		virtual void parseMouseDrag(const std::string& root, sf::Time eventTime,
 								ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
 		virtual void parseMouseClick(const std::string& root, sf::Time eventTime, ILSLib::MouseButton::Button button,
@@ -83,15 +83,15 @@ namespace ILSLibSFML
 								ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
 		virtual void parseMouseDoubleClickRelease(const std::string& root, sf::Time eventTime, ILSLib::MouseButton::Button button,
 								ILSLib::BlockManager& blockManager, ILSLib::EventQueue& eventQueue);
-		
+
 		virtual void removeKey(const std::string& keyCode);
 		virtual const ILSLib::MouseButton* getButton(ILSLib::MouseButton::Button button) const;
 		virtual void updateButton(ILSLib::MouseButton::Button button,
 					const ILSLib::MouseButton::ButtonAction& latestAction, ILSLib::MouseEvent::Type eventType);
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 

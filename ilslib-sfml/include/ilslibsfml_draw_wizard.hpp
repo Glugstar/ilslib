@@ -12,7 +12,7 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../other/ilslib_draw_wizard.hpp"
+#include "../../ilslib-dev/include/other/ilslib_draw_wizard.hpp"
 
 
 
@@ -21,9 +21,9 @@ ILS (Interface Layout Scheme) library - SFML Adapter.
 ----------------------------------------------------------------------------------*/
 namespace ILSLibSFML
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 										DrawWizard
 	------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ namespace ILSLibSFML
 		// constructors & destructor
 		DrawWizard();
 		virtual ~DrawWizard();
-		
-		
+
+
 		// functions
 		void draw(ILSLib::Drawable* nextDrawable, ILSLib::ResourceManager* resourceManager, void* renderSurface);
 	protected:
@@ -54,9 +54,9 @@ namespace ILSLibSFML
 		virtual void restoreView(sf::RenderWindow* renderWindow,
 								 const sf::View& oldView);
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLibSFML
 //----------------------------------------------------------------------------------
 
