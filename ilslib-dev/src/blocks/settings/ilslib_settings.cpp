@@ -7,9 +7,9 @@
 ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
-	
-	
-	
+
+
+
 	Settings::Settings():
 		fixedWidth(0),
 		fixedHeight(0),
@@ -21,10 +21,10 @@ namespace ILSLib
 		outterSpacingRight(0),
 		outterSpacingTop(0),
 		outterSpacingBottom(0),
-		horizontalGravity(LeftOrUpperGravity),
-		verticalGravity(LeftOrUpperGravity),
-		horizontalAlignment(LeftOrUpperAlignment),
-		verticalAlignment(LeftOrUpperAlignment),
+		horizontalGravity(LeftGravity),
+		verticalGravity(TopGravity),
+		horizontalAlignment(LeftAlignment),
+		verticalAlignment(TopAlignment),
 		horizontalSizePolicy(Minimize),
 		verticalSizePolicy(Minimize),
 		visibility(Visible),
@@ -33,13 +33,13 @@ namespace ILSLib
 		ignoreDisplayCuts(false)
 	{
 	}
-	
-	
+
+
 	Settings::~Settings()
 	{
 	}
-	
-	
+
+
 	unsigned int Settings::getMinAppliedInnerWidth() const
 	{
 		if(fixedWidth > 0)
@@ -48,8 +48,8 @@ namespace ILSLib
 			return minWidth;
 		return 0;
 	}
-	
-	
+
+
 	unsigned int Settings::getMinAppliedInnerHeight() const
 	{
 		if(fixedHeight > 0)
@@ -58,8 +58,8 @@ namespace ILSLib
 			return minHeight;
 		return 0;
 	}
-	
-	
+
+
 	unsigned int Settings::getMaxAppliedInnerWidth() const
 	{
 		if(fixedWidth > 0)
@@ -68,8 +68,8 @@ namespace ILSLib
 			return maxWidth;
 		return 0;
 	}
-	
-	
+
+
 	unsigned int Settings::getMaxAppliedInnerHeight() const
 	{
 		if(fixedHeight > 0)
@@ -78,21 +78,21 @@ namespace ILSLib
 			return maxHeight;
 		return 0;
 	}
-	
-	
+
+
 	unsigned int Settings::getOutterSpacingHorizontal() const
 	{
 		return outterSpacingLeft + outterSpacingRight;
 	}
-	
-	
+
+
 	unsigned int Settings::getOutterSpacingVertical() const
 	{
 		return outterSpacingTop + outterSpacingBottom;
 	}
-	
-	
-	
+
+
+
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------
 

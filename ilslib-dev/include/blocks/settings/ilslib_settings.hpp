@@ -20,9 +20,9 @@ ILS (Interface Layout Scheme) library.
 ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 										Settings
 	------------------------------------------------------------------------------------
@@ -47,28 +47,34 @@ namespace ILSLib
 			Maximize
 		};
 		/*! @brief Where are the components located
-		(Latin script paragraphs are LeftOrUpperGravity). */
+		(Latin script paragraphs are left and top gravity). */
 		enum Gravity
 		{
-			LeftOrUpperGravity,
-			RightOrLowerGravity,
+			LeftGravity,
+			RightGravity,
+			TopGravity,
+			BottomGravity,
 			CenterGravity,
 			SpreadOut
 		};
 		/*! @brief Where are the components located (within their block)
-		(Latin script paragraphs are LeftOrUpperAlignment). */
+		(Latin script paragraphs are left and top alignment). */
 		enum Alignment
 		{
-			LeftOrUpperAlignment,
-			RightOrLowerAlignment,
+			LeftAlignment,
+			RightAlignment,
+			TopAlignment,
+			BottomAlignment,
 			CenterAlignment
 		};
 		/*! @brief In which direction are the components displayed
-		(Latin script paragraphs are RightOrLowerFlow). */
+		(Latin script paragraphs are left to right and top to bottom flow). */
 		enum Flow
 		{
-			LeftOrUpperFlow,
-			RightOrLowerFlow
+			LeftToRightFlow,
+			RightToLeftFlow,
+			TopToBottomFlow,
+			BottomToTopFlow
 		};
 		/*! @brief How is the block displayed */
 		enum Visibility
@@ -92,13 +98,13 @@ namespace ILSLib
 			s2B_determineCutRectangles,
 			s2C_addToDrawableMap
 		};
-		
-		
+
+
 		// constructors & destructor
 		Settings();
 		virtual ~Settings();
-		
-		
+
+
 		// functions
 		virtual unsigned int getMinAppliedInnerWidth() const;
 		virtual unsigned int getMinAppliedInnerHeight() const;
@@ -106,8 +112,8 @@ namespace ILSLib
 		virtual unsigned int getMaxAppliedInnerHeight() const;
 		virtual unsigned int getOutterSpacingHorizontal() const;
 		virtual unsigned int getOutterSpacingVertical() const;
-		
-		
+
+
 		// variables
 			// size specifications; 0 means to be ignored
 		unsigned int fixedWidth;
@@ -134,9 +140,9 @@ namespace ILSLib
 		bool postNewLine;
 		bool ignoreDisplayCuts; // true to display components outside their boundaries if they don't fit
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------
 

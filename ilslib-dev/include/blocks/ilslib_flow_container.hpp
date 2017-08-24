@@ -21,9 +21,9 @@ ILS (Interface Layout Scheme) library.
 ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
-	
-	
-	
+
+
+
 	/*!---------------------------------------------------------------------------------
 										FlowContainer
 	------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ namespace ILSLib
 		// constructors & destructor
 		FlowContainer(const std::string& containerID);
 		virtual ~FlowContainer();
-		
-		
+
+
 		// functions
 			// basic element functions
 		virtual const FlowContainerSettings* getFlowContainerSettings() const;
@@ -77,7 +77,7 @@ namespace ILSLib
 									const int primaryRestriction, const Settings::Step step,
 									const FlowContainerSettings* currentSettings);
 		static Vector getBlockSize(const BasicBlock* block, const Settings::Step step);
-		static bool determineNewLine(const FlowContainerSettings* currentSettings, const bool tableMode,
+		static bool determineNewLine(const FlowContainerSettings* currentSettings,
 									const int primaryCounter, const int blockCounter,
 									const int totalPrimary, const int cellPrimary,
 									const int limitPrimary, const bool limitEnabled);
@@ -96,14 +96,14 @@ namespace ILSLib
 									const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
 									const Settings::Alignment primaryAlignment,
 									const Settings::Alignment secondaryAlignment);
-		
-		
+
+
 		// variables
 		SubComponents basicBlocks;
 	};
-	
-	
-	
+
+
+
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------
 

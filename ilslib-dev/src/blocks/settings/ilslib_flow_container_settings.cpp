@@ -7,33 +7,26 @@
 ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
-	
-	
-	
+
+
+
 	FlowContainerSettings::FlowContainerSettings():
 		ContainerSettings(),
 		cellSpacingHeight(0),
 		axisPriority(HorizontalFirst),
-		horizontalFlow(RightOrLowerFlow),
-		verticalFlow(RightOrLowerFlow),
-		autoLineWrap(false),
-		tableNumberOfCells(0)
+		horizontalFlow(LeftToRightFlow),
+		verticalFlow(TopToBottomFlow),
+		autoLineWrap(false)
 	{
 	}
-	
-	
+
+
 	FlowContainerSettings::~FlowContainerSettings()
 	{
 	}
-	
-	
-	bool FlowContainerSettings::tableMode() const
-	{
-		return autoLineWrap == true && tableNumberOfCells > 0;
-	}
-	
-	
-	
+
+
+
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------
 
