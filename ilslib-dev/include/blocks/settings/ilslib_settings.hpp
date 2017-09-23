@@ -58,7 +58,7 @@ namespace ILSLib
 			SpreadOut
 		};
 		/*! @brief Where are the components located (within their block)
-		(Latin script paragraphs are left and top alignment). */
+		(Latin script paragraphs are left and bottom alignment). */
 		enum Alignment
 		{
 			LeftAlignment,

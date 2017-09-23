@@ -36,8 +36,8 @@ std::list<ContainerStyle*> getStyles(const ILSLibSFML::ResourceManager& resource
 	style = new ContainerStyle("container");
 	styles.push_back(style);
 
-	outlineColor.red = 0;
-	outlineColor.green = 0;
+	outlineColor.red = 255;
+	outlineColor.green = 255;
 	outlineColor.blue = 0;
 
 	bgGradient.topLeftBGColor.red = 128;
@@ -56,7 +56,7 @@ std::list<ContainerStyle*> getStyles(const ILSLibSFML::ResourceManager& resource
 	style = new ContainerStyle("red");
 	styles.push_back(style);
 
-	outlineColor.red = 128;
+	outlineColor.red = 96;
 	outlineColor.green = 0;
 	outlineColor.blue = 0;
 
@@ -77,7 +77,7 @@ std::list<ContainerStyle*> getStyles(const ILSLibSFML::ResourceManager& resource
 	styles.push_back(style);
 
 	outlineColor.red = 0;
-	outlineColor.green = 96;
+	outlineColor.green = 64;
 	outlineColor.blue = 0;
 
 	bgGradient.topLeftBGColor.red = 0;
@@ -98,7 +98,7 @@ std::list<ContainerStyle*> getStyles(const ILSLibSFML::ResourceManager& resource
 
 	outlineColor.red = 0;
 	outlineColor.green = 0;
-	outlineColor.blue = 144;
+	outlineColor.blue = 96;
 
 	bgGradient.topLeftBGColor.red = 0;
 	bgGradient.topLeftBGColor.green = 0;
@@ -116,9 +116,9 @@ std::list<ContainerStyle*> getStyles(const ILSLibSFML::ResourceManager& resource
 	style = new ContainerStyle("white");
 	styles.push_back(style);
 
-	outlineColor.red = 192;
-	outlineColor.green = 192;
-	outlineColor.blue = 192;
+	outlineColor.red = 96;
+	outlineColor.green = 96;
+	outlineColor.blue = 96;
 
 	bgGradient.topLeftBGColor.red = 255;
 	bgGradient.topLeftBGColor.green = 255;

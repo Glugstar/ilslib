@@ -811,6 +811,9 @@ namespace ILSLib
 		if(blockCounter == 0)
 			return false;
 
+		if(totalPrimary == 0)
+			return false;
+
         if(limitEnabled == false)
             return false;
 
@@ -968,8 +971,8 @@ namespace ILSLib
 			*pMapper.coordPrimary = absoluteReferencePrimary;
 			*pMapper.coordSecondary = absoluteReferenceSecondary;
 
-			primaryAlignOffset = *dMapper.subComponentsTotalPrimary -
-								(*dMapper.lineTotalPrimary)[secondaryIndex];
+			primaryAlignOffset = *dMapper.subComponentsTotalPrimary;
+			primaryAlignOffset -= (*dMapper.lineTotalPrimary)[secondaryIndex];
 
             bool primaryFlowFlag = false;
             if(xIsPrimary == true)
@@ -1008,8 +1011,8 @@ namespace ILSLib
 			}
 
 
-			secondaryAlignOffset = (*dMapper.lineMaxSecondary)[secondaryIndex] -
-									!xIsPrimary ? blockSize.x : blockSize.y;
+			secondaryAlignOffset = (*dMapper.lineMaxSecondary)[secondaryIndex];
+			secondaryAlignOffset -= !xIsPrimary ? blockSize.x : blockSize.y;
 
 
             bool secondaryFlowFlag = false;

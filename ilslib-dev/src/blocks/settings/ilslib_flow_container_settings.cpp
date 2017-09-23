@@ -12,6 +12,7 @@ namespace ILSLib
 
 	FlowContainerSettings::FlowContainerSettings():
 		ContainerSettings(),
+		cellSpacingWidth(0),
 		cellSpacingHeight(0),
 		axisPriority(HorizontalFirst),
 		horizontalFlow(LeftToRightFlow),
