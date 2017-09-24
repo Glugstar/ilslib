@@ -2,9 +2,9 @@
 
 
 
-/*----------------------------------------------------------------------------------
+/*  ----------------------------------------------------------------------------------
 										ILSLib
-----------------------------------------------------------------------------------*/
+    ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
 
@@ -20,14 +20,20 @@ namespace ILSLib
 		autoLineWrap(false)
 	{
 	}
-
-
+	
+	
 	FlowContainerSettings::~FlowContainerSettings()
 	{
 	}
-
-
-
+	
+	
+	bool FlowContainerSettings::xIsPrimary() const
+	{
+        return axisPriority == ContainerSettings::AxisPriority::HorizontalFirst;
+	}
+	
+	
+	
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------
 

@@ -88,14 +88,28 @@ namespace ILSLib
 									const int cellPrimary);
 		static void calculateSubComponentTotals(DimensionsMapper& dMapper,
 									const FlowContainerSettings* currentSettings);
+        static int determineAbsoluteRefX(const FlowContainerSettings* currentSettings,
+                                    const DimensionsInfo& dInfo, int posInfoX);
+        static int determineAbsoluteRefY(const FlowContainerSettings* currentSettings,
+                                    const DimensionsInfo& dInfo, int posInfoY);
 		static void updateAbsolutePositions(SubComponents& basicBlocks, DimensionsMapper& dMapper,
-									const FlowContainerSettings* currentSettings,
-									const int absoluteReferencePrimary, const int absoluteReferenceSecondary,
-									const int basePrimarySpacing, const int baseSecondarySpacing,
-									const bool equalCellPrimary, const bool equalCellSecondary,
-									const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
-									const Settings::Alignment primaryAlignment,
-									const Settings::Alignment secondaryAlignment);
+                                    const FlowContainerSettings* currentSettings,
+                                    const int absoluteReferencePrimary, const int absoluteReferenceSecondary,
+                                    const int basePrimarySpacing, const int baseSecondarySpacing,
+                                    const bool equalCellPrimary, const bool equalCellSecondary,
+                                    const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
+                                    const Settings::Alignment primaryAlignment,
+                                    const Settings::Alignment secondaryAlignment);
+        static int determinePrimaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+                                    int secondaryIndex, int posPrimary, int primarySize,
+                                    const int absoluteReferencePrimary,
+                                    const Settings::Flow primaryFlow,
+                                    const Settings::Alignment primaryAlignment);
+        static int determineSecondaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+                                    int secondaryIndex, int posSecondary, int secondarySize, int blockSizeY,
+                                    const int absoluteReferenceSecondary,
+                                    const Settings::Flow secondaryFlow,
+                                    const Settings::Alignment secondaryAlignment);
 
 
 		// variables

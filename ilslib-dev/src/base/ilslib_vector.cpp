@@ -24,6 +24,14 @@ namespace ILSLib
 	}
 	
 	
+	void Vector::swapValues()
+	{
+	    int tmp = x;
+	    x = y;
+	    y = tmp;
+	}
+	
+	
 	
 } // end namespace ILSLib
 //----------------------------------------------------------------------------------

@@ -33,6 +33,10 @@ namespace ILSLib
 		Vector(int newX, int newY);
 		
 		
+		// functions
+		void swapValues();
+		
+		
 		// variables
 		int x;
 		int y;

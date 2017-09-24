@@ -36,6 +36,10 @@ namespace ILSLib
 		virtual ~FlowContainerSettings();
 
 
+		// functions
+		virtual bool xIsPrimary() const;
+		
+		
 		// variables
 			// minimum empty space between elements
 		unsigned int cellSpacingWidth;

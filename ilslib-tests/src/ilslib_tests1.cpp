@@ -70,7 +70,8 @@ void createAllTestsA(BlockManager& manager, const std::string rootName)
 	baseSettings.cellSpacingWidth = 10;
 	baseSettings.cellSpacingHeight = 10;
 	//baseSettings.horizontalAlignment = Settings::Alignment::CenterAlignment;
-	baseSettings.verticalAlignment = Settings::Alignment::CenterAlignment;
+	//baseSettings.verticalAlignment = Settings::Alignment::CenterAlignment;
+	//baseSettings.verticalAlignment = Settings::Alignment::BottomAlignment;
 	
 	createTestGroupA(manager, &baseSettings, rootName);
 }
