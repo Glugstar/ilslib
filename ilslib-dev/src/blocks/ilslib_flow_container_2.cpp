@@ -9,6 +9,19 @@ namespace ILSLib
 {
 
 
+	bool determineNewLine(const FlowContainerSettings* currentSettings,
+	                      const int primaryCounter, const int blockCounter,
+	                      const int totalPrimary, const int cellPrimary,
+	                      const int limitPrimary, const bool limitEnabled);
+	void commitNewLine(DimensionsMapper& dMapper, const int blockCounter, const int cellSecondary,
+	                   int& primaryCounter, int& secondaryCounter,
+	                   int& primaryCurrentTotal, int& secondaryCurrentMax);
+	void commitLineMaxPrimary(DimensionsMapper& dMapper, const int primaryCounter,
+	                          const int cellPrimary);
+	void calculateSubComponentTotals(DimensionsMapper& dMapper,
+	                                 const FlowContainerSettings* currentSettings);
+    
+    
 	void FlowContainer::step1A_minimize()
 	{
 		FlowContainerSettings* currentSettings = getFlowContainerSettings();
@@ -58,7 +71,103 @@ namespace ILSLib
 	}
 	
 	
-	int FlowContainer::findPrimaryLimit(const FlowContainerSettings* currentSettings)
+	bool determineNewLine(const FlowContainerSettings* currentSettings,
+	                      const int primaryCounter, const int blockCounter,
+	                      const int totalPrimary, const int cellPrimary,
+	                      const int limitPrimary, const bool limitEnabled)
+	{
+		if(currentSettings->autoLineWrap == false)
+			return false;
+			
+		if(blockCounter == 0)
+			return false;
+			
+		if(primaryCounter == 0)
+			return false;
+			
+		if(limitEnabled == false)
+			return false;
+			
+		if(totalPrimary + cellPrimary > limitPrimary)
+			return true;
+			
+		return false;
+	}
+	
+	
+	void commitNewLine(DimensionsMapper& dMapper, const int blockCounter, const int cellSecondary,
+	                   int& primaryCounter, int& secondaryCounter,
+	                   int& primaryCurrentTotal, int& secondaryCurrentMax)
+	{
+		if(dMapper.lineTotalSecondary->size() <= (unsigned int)primaryCounter)
+			dMapper.lineTotalSecondary->resize(primaryCounter + 1, 0);
+			
+		(*dMapper.lineTotalSecondary)[primaryCounter] += cellSecondary;
+		dMapper.lineTotalPrimary->push_back(primaryCurrentTotal);
+		dMapper.lineMaxSecondary->push_back(secondaryCurrentMax);
+		dMapper.newLineBreaks->push_back(blockCounter);
+		primaryCurrentTotal = 0;
+		secondaryCurrentMax = 0;
+		primaryCounter = 0;
+		++secondaryCounter;
+	}
+	
+	
+	void commitLineMaxPrimary(DimensionsMapper& dMapper, const int primaryCounter,
+	        const int cellPrimary)
+	{
+		if(dMapper.lineMaxPrimary->size() <= (unsigned int)primaryCounter)
+			dMapper.lineMaxPrimary->resize(primaryCounter + 1, 0);
+			
+		int value = (*dMapper.lineMaxPrimary)[primaryCounter];
+		value = value > cellPrimary ? value : cellPrimary;
+		(*dMapper.lineMaxPrimary)[primaryCounter] = value;
+	}
+	
+	
+	void calculateSubComponentTotals(DimensionsMapper& dMapper,
+	        const FlowContainerSettings* currentSettings)
+	{
+		int max, total;
+		std::vector<int>::iterator i;
+		
+		// primary
+		max = 0;
+		
+		for(i = dMapper.lineTotalPrimary->begin();
+		        i != dMapper.lineTotalPrimary->end();
+		        ++i)
+		{
+			max = max > *i ? max : *i;
+		}
+		
+		*dMapper.subComponentsTotalPrimary = max;
+		
+		// secondary
+		total = 0;
+		
+		for(i = dMapper.lineMaxSecondary->begin();
+		        i != dMapper.lineMaxSecondary->end();
+		        ++i)
+		{
+			// add row spacing
+			if(i != dMapper.lineMaxSecondary->begin())
+			{
+				if(currentSettings->axisPriority ==
+				        ContainerSettings::AxisPriority::HorizontalFirst)
+					total += currentSettings->cellSpacingHeight;
+				else
+					total += currentSettings->cellSpacingWidth;
+			}
+			
+			total += *i;
+		}
+		
+		*dMapper.subComponentsTotalSecondary = total;
+	}
+	
+	
+	int findPrimaryLimit(const FlowContainerSettings* currentSettings)
 	{
 		int primaryLimit = 0;
 		bool xIsPrimary = currentSettings->xIsPrimary();
@@ -86,7 +195,7 @@ namespace ILSLib
 	}
 	
 	
-	void FlowContainer::updateRowColumnInfo(SubComponents& basicBlocks, DimensionsMapper& dMapper,
+	void updateRowColumnInfo(Container::SubComponents& basicBlocks, DimensionsMapper& dMapper,
 	                                        const int primaryRestriction, const Settings::Step step,
 	                                        const FlowContainerSettings* currentSettings)
 	{
@@ -120,10 +229,10 @@ namespace ILSLib
 		dMapper.lineTotalSecondary->clear();
 		dMapper.newLineBreaks->clear();
 		
-		SubComponents::Filter filter;
-		filter.addFilterFuntion(isPhysical);
+		Container::SubComponents::Filter filter;
+		filter.addFilterFuntion(Container::isPhysical);
 		
-		const_iterator block;
+		Container::const_iterator block;
 		for(block = basicBlocks.begin(&filter);
 		        !block.isEnd(); ++block, ++primaryCounter)
 		{
@@ -191,108 +300,12 @@ namespace ILSLib
 	}
 	
 	
-	Vector FlowContainer::getBlockSize(const BasicBlock* block, const Settings::Step step)
+	Vector getBlockSize(const BasicBlock* block, const Settings::Step step)
 	{
 		const DimensionsInfo& blockDInfo = block->getDimensionsInfo(step);
 		
 		Vector blockSize(blockDInfo.totalWidth, blockDInfo.totalHeight);
 		return blockSize;
-	}
-	
-	
-	bool FlowContainer::determineNewLine(const FlowContainerSettings* currentSettings,
-	                                     const int primaryCounter, const int blockCounter,
-	                                     const int totalPrimary, const int cellPrimary,
-	                                     const int limitPrimary, const bool limitEnabled)
-	{
-		if(currentSettings->autoLineWrap == false)
-			return false;
-			
-		if(blockCounter == 0)
-			return false;
-			
-		if(primaryCounter == 0)
-			return false;
-			
-		if(limitEnabled == false)
-			return false;
-			
-		if(totalPrimary + cellPrimary > limitPrimary)
-			return true;
-			
-		return false;
-	}
-	
-	
-	void FlowContainer::commitNewLine(DimensionsMapper& dMapper, const int blockCounter, const int cellSecondary,
-	                                  int& primaryCounter, int& secondaryCounter,
-	                                  int& primaryCurrentTotal, int& secondaryCurrentMax)
-	{
-		if(dMapper.lineTotalSecondary->size() <= (unsigned int)primaryCounter)
-			dMapper.lineTotalSecondary->resize(primaryCounter + 1, 0);
-			
-		(*dMapper.lineTotalSecondary)[primaryCounter] += cellSecondary;
-		dMapper.lineTotalPrimary->push_back(primaryCurrentTotal);
-		dMapper.lineMaxSecondary->push_back(secondaryCurrentMax);
-		dMapper.newLineBreaks->push_back(blockCounter);
-		primaryCurrentTotal = 0;
-		secondaryCurrentMax = 0;
-		primaryCounter = 0;
-		++secondaryCounter;
-	}
-	
-	
-	void FlowContainer::commitLineMaxPrimary(DimensionsMapper& dMapper, const int primaryCounter,
-	        const int cellPrimary)
-	{
-		if(dMapper.lineMaxPrimary->size() <= (unsigned int)primaryCounter)
-			dMapper.lineMaxPrimary->resize(primaryCounter + 1, 0);
-			
-		int value = (*dMapper.lineMaxPrimary)[primaryCounter];
-		value = value > cellPrimary ? value : cellPrimary;
-		(*dMapper.lineMaxPrimary)[primaryCounter] = value;
-	}
-	
-	
-	void FlowContainer::calculateSubComponentTotals(DimensionsMapper& dMapper,
-	        const FlowContainerSettings* currentSettings)
-	{
-		int max, total;
-		std::vector<int>::iterator i;
-		
-		// primary
-		max = 0;
-		
-		for(i = dMapper.lineTotalPrimary->begin();
-		        i != dMapper.lineTotalPrimary->end();
-		        ++i)
-		{
-			max = max > *i ? max : *i;
-		}
-		
-		*dMapper.subComponentsTotalPrimary = max;
-		
-		// secondary
-		total = 0;
-		
-		for(i = dMapper.lineMaxSecondary->begin();
-		        i != dMapper.lineMaxSecondary->end();
-		        ++i)
-		{
-			// add row spacing
-			if(i != dMapper.lineMaxSecondary->begin())
-			{
-				if(currentSettings->axisPriority ==
-				        ContainerSettings::AxisPriority::HorizontalFirst)
-					total += currentSettings->cellSpacingHeight;
-				else
-					total += currentSettings->cellSpacingWidth;
-			}
-			
-			total += *i;
-		}
-		
-		*dMapper.subComponentsTotalSecondary = total;
 	}
 	
 	

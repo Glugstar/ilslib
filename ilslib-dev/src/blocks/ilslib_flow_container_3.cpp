@@ -1,9 +1,9 @@
 #include "../../include/blocks/ilslib_flow_container.hpp"
 
 /*
----- sequential maximization algorithm pseudo-code:
+    ---- sequential maximization algorithm pseudo-code:
 
-maximize
+    maximize
 	getMaximizableSubObjects()
 	while(object list is not empty)
 		for(objects)
@@ -32,9 +32,9 @@ maximize
     ----------------------------------------------------------------------------------*/
 namespace ILSLib
 {
-
-
-
+    
+    
+    
 	void FlowContainer::step1C_maximize(const Vector& availableSize)
 	{
 		Container::step1C_maximize(availableSize);

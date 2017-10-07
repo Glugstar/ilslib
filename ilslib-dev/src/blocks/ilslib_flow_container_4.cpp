@@ -10,6 +10,22 @@ namespace ILSLib
 
 
 
+	int determineAbsoluteRefX(const FlowContainerSettings* currentSettings,
+	                          const DimensionsInfo& dInfo, int posInfoX);
+	int determineAbsoluteRefY(const FlowContainerSettings* currentSettings,
+	                          const DimensionsInfo& dInfo, int posInfoY);
+	int determinePrimaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+	                          int secondaryIndex, int posPrimary, int primarySize,
+	                          const int absoluteReferencePrimary,
+	                          const Settings::Flow primaryFlow,
+	                          const Settings::Alignment primaryAlignment);
+	int determineSecondaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+	                            int secondaryIndex, int posSecondary, int secondarySize, int blockSizeY,
+	                            const int absoluteReferenceSecondary,
+	                            const Settings::Flow secondaryFlow,
+	                            const Settings::Alignment secondaryAlignment);
+    
+    
 	void FlowContainer::step2A_determinePositions()
 	{
 		int absRefX = 0;
@@ -87,14 +103,116 @@ namespace ILSLib
 		pInfo.intersectionRectangle = pInfo.posRectangle.intersect(pInfo.cutRectangle);
 		
 		SubComponents::Filter filter;
-		filter.addFilterFuntion(isPhysical);
+		filter.addFilterFuntion(Container::isPhysical);
 		
 		for(iterator i=basicBlocks.begin(&filter); !i.isEnd(); ++i)
 			(*i)->step2B_determineCutRectangles(pInfo.intersectionRectangle);
 	}
 	
 	
-	int FlowContainer::determineAbsoluteRefX(const FlowContainerSettings* currentSettings,
+	void FlowContainer::updateAbsolutePositions(Container::SubComponents& basicBlocks, DimensionsMapper& dMapper,
+	        const FlowContainerSettings* currentSettings,
+	        const int absoluteReferencePrimary, const int absoluteReferenceSecondary,
+	        const int basePrimarySpacing, const int baseSecondarySpacing,
+	        const bool equalCellPrimary, const bool equalCellSecondary,
+	        const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
+	        const Settings::Alignment primaryAlignment,
+	        const Settings::Alignment secondaryAlignment)
+	{
+		Settings::Step dataStep = Settings::Step::s1D_reAdjust;
+		
+		int nextNewLineIndex = -1;
+		int posPrimary = 0;
+		int posSecondary = 0;
+		int primaryIndex = 0;
+		int secondaryIndex = 0;
+		int primarySpacing = 0;
+		int secondarySpacing = 0;
+		bool xIsPrimary = currentSettings->xIsPrimary();
+		
+		std::list<unsigned int>::const_iterator lineBreakIterator;
+		
+		lineBreakIterator = dMapper.newLineBreaks->begin();
+		if(lineBreakIterator != dMapper.newLineBreaks->end())
+			nextNewLineIndex = (int)*lineBreakIterator;
+			
+		Container::SubComponents::Filter filter;
+		filter.addFilterFuntion(Container::isPhysical);
+		
+		for(Container::iterator block = basicBlocks.begin(&filter); !block.isEnd(); ++block, ++primaryIndex)
+		{
+			if(*block == nullptr)
+				throw std::exception();
+				
+			if(nextNewLineIndex == block.getCounter())
+			{
+				posPrimary = 0;
+				
+				posSecondary += (*dMapper.lineMaxSecondary)[secondaryIndex];
+				posSecondary += secondarySpacing;
+				
+				primaryIndex = 0;
+				++secondaryIndex;
+				
+				++lineBreakIterator;
+				if(lineBreakIterator != dMapper.newLineBreaks->end())
+					nextNewLineIndex = (int)*lineBreakIterator;
+				else
+					nextNewLineIndex = -1;
+			}
+			
+			Vector blockSize = getBlockSize(*block, dataStep);
+			if(xIsPrimary == false)
+				blockSize.swapValues();
+				
+			int primarySize;
+			if(equalCellPrimary == true)
+				primarySize = *dMapper.subComponentsMaxPrimary;
+			else
+				primarySize = blockSize.x;
+				
+			int secondarySize;
+			if(equalCellSecondary == true)
+				secondarySize = *dMapper.subComponentsMaxSecondary;
+			else
+				secondarySize = blockSize.y;
+				
+				
+			PositionInfo* blockPInfo = &(*block)->pInfo;
+			PositionMapper pMapper(blockPInfo, xIsPrimary);
+			
+			*pMapper.coordPrimary = determinePrimaryCoord(dMapper, xIsPrimary,
+			                        secondaryIndex, posPrimary, primarySize,
+			                        absoluteReferencePrimary, primaryFlow, primaryAlignment);
+			*pMapper.coordSecondary = determineSecondaryCoord(dMapper, xIsPrimary,
+			                          secondaryIndex, posSecondary, secondarySize, blockSize.y,
+			                          absoluteReferenceSecondary, secondaryFlow, secondaryAlignment);
+			                          
+			(*block)->step2A_determinePositions();
+			
+			primarySpacing = basePrimarySpacing;
+			secondarySpacing = baseSecondarySpacing;
+			
+			/*
+			    if(xIsPrimary == true)
+			    {
+			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
+			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
+			    }
+			    else
+			    {
+			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
+			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
+			    }
+			*/
+			
+			posPrimary += primarySize;
+			posPrimary += primarySpacing;
+		}
+	}
+	
+	
+	int determineAbsoluteRefX(const FlowContainerSettings* currentSettings,
 	        const DimensionsInfo& dInfo, int posInfoX)
 	{
 		int containerInnerWidth = 0;
@@ -150,7 +268,7 @@ namespace ILSLib
 	}
 	
 	
-	int FlowContainer::determineAbsoluteRefY(const FlowContainerSettings* currentSettings,
+	int determineAbsoluteRefY(const FlowContainerSettings* currentSettings,
 	        const DimensionsInfo& dInfo, int posInfoY)
 	{
 		int containerInnerHeight = 0;
@@ -206,110 +324,8 @@ namespace ILSLib
 	}
 	
 	
-	void FlowContainer::updateAbsolutePositions(SubComponents& basicBlocks, DimensionsMapper& dMapper,
-	        const FlowContainerSettings* currentSettings,
-	        const int absoluteReferencePrimary, const int absoluteReferenceSecondary,
-	        const int basePrimarySpacing, const int baseSecondarySpacing,
-	        const bool equalCellPrimary, const bool equalCellSecondary,
-	        const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
-	        const Settings::Alignment primaryAlignment,
-	        const Settings::Alignment secondaryAlignment)
-	{
-		Settings::Step dataStep = Settings::Step::s1D_reAdjust;
-		
-		int nextNewLineIndex = -1;
-		int posPrimary = 0;
-		int posSecondary = 0;
-		int primaryIndex = 0;
-		int secondaryIndex = 0;
-		int primarySpacing = 0;
-		int secondarySpacing = 0;
-		bool xIsPrimary = currentSettings->xIsPrimary();
-		
-		std::list<unsigned int>::const_iterator lineBreakIterator;
-		
-		lineBreakIterator = dMapper.newLineBreaks->begin();
-		if(lineBreakIterator != dMapper.newLineBreaks->end())
-			nextNewLineIndex = (int)*lineBreakIterator;
-			
-		SubComponents::Filter filter;
-		filter.addFilterFuntion(isPhysical);
-		
-		for(iterator block = basicBlocks.begin(&filter); !block.isEnd(); ++block, ++primaryIndex)
-		{
-			if(*block == nullptr)
-				throw std::exception();
-				
-			if(nextNewLineIndex == block.getCounter())
-			{
-				posPrimary = 0;
-				
-				posSecondary += (*dMapper.lineMaxSecondary)[secondaryIndex];
-				posSecondary += secondarySpacing;
-				
-				primaryIndex = 0;
-				++secondaryIndex;
-				
-				++lineBreakIterator;
-				if(lineBreakIterator != dMapper.newLineBreaks->end())
-					nextNewLineIndex = (int)*lineBreakIterator;
-				else
-					nextNewLineIndex = -1;
-			}
-			
-			Vector blockSize = getBlockSize(*block, dataStep);
-			if(xIsPrimary == false)
-				blockSize.swapValues();
-				
-			int primarySize;
-			if(equalCellPrimary == true)
-				primarySize = *dMapper.subComponentsMaxPrimary;
-			else
-				primarySize = blockSize.x;
-				
-			int secondarySize;
-			if(equalCellSecondary == true)
-				secondarySize = *dMapper.subComponentsMaxSecondary;
-			else
-				secondarySize = blockSize.y;
-				
-				
-			PositionInfo* blockPInfo = &(*block)->pInfo;
-			PositionMapper pMapper(blockPInfo, xIsPrimary);
-			
-			*pMapper.coordPrimary = determinePrimaryCoord(dMapper, xIsPrimary,
-                                            secondaryIndex, posPrimary, primarySize,
-                                            absoluteReferencePrimary, primaryFlow, primaryAlignment);
-			*pMapper.coordSecondary = determineSecondaryCoord(dMapper, xIsPrimary,
-                                            secondaryIndex, posSecondary, secondarySize, blockSize.y,
-                                            absoluteReferenceSecondary, secondaryFlow, secondaryAlignment);
-			
-			(*block)->step2A_determinePositions();
-			
-			primarySpacing = basePrimarySpacing;
-			secondarySpacing = baseSecondarySpacing;
-			
-			/*
-			    if(xIsPrimary == true)
-			    {
-			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
-			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
-			    }
-			    else
-			    {
-			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
-			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
-			    }
-			*/
-			
-			posPrimary += primarySize;
-			posPrimary += primarySpacing;
-		}
-	}
-	
-	
-	int FlowContainer::determinePrimaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
-            int secondaryIndex, int posPrimary, int primarySize,
+	int determinePrimaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+	        int secondaryIndex, int posPrimary, int primarySize,
 	        const int absoluteReferencePrimary,
 	        const Settings::Flow primaryFlow,
 	        const Settings::Alignment primaryAlignment)
@@ -359,8 +375,8 @@ namespace ILSLib
 	}
 	
 	
-	int FlowContainer::determineSecondaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
-            int secondaryIndex, int posSecondary, int secondarySize, int blockSizeY,
+	int determineSecondaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
+	        int secondaryIndex, int posSecondary, int secondarySize, int blockSizeY,
 	        const int absoluteReferenceSecondary,
 	        const Settings::Flow secondaryFlow,
 	        const Settings::Alignment secondaryAlignment)
