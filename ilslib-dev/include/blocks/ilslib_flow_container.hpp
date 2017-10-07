@@ -49,7 +49,7 @@ namespace ILSLib
 		virtual Vector getAvailableMaximization() const;
 			// step 1: dimensions and position computations (strict order)
 		virtual void step1A_minimize();
-		//virtual void step1C_maximize(const Vector& availableSize);
+		virtual void step1C_maximize(const Vector& availableSize);
 			// step 2: drawable map generation
 		virtual void step2A_determinePositions();
 		virtual void step2B_determineCutRectangles(const Rectangle& availableSpace);

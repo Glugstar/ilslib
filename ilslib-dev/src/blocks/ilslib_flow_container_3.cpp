@@ -1,5 +1,30 @@
 #include "../../include/blocks/ilslib_flow_container.hpp"
 
+/*
+---- sequential maximization algorithm pseudo-code:
+
+maximize
+	getMaximizableSubObjects()
+	while(object list is not empty)
+		for(objects)
+			object maximum share = (object size * remaining maximization potential) / objects total size
+			if(object maximum share >= object maximization potential)
+				maximize(this object, object maximization potential)
+				remove it from the object list
+				subtract from remaining maximization potential
+				subtract from objects total size
+		if(no object was maximized)
+			end while
+	if(remaining maximization potential > 0)
+        // sort according to which object share is closest to its ceiling function
+		sortByRoundingNearestCeiling(objects)
+		for(objects)
+			if(remaining maximization potential > 0)
+				object maximum share ++
+		for(objects)
+			maximize(this object, object maximum share)
+*/
+
 
 
 /*  ----------------------------------------------------------------------------------
@@ -10,405 +35,302 @@ namespace ILSLib
 
 
 
-	void FlowContainer::step2A_determinePositions()
+	void FlowContainer::step1C_maximize(const Vector& availableSize)
 	{
-		int absRefX = 0;
-		int absRefY = 0;
-		int absoluteReferencePrimary = 0;
-		int absoluteReferenceSecondary = 0;
-		int basePrimarySpacing = 0;
-		int baseSecondarySpacing = 0;
-		bool equalCellPrimary = false;
-		bool equalCellSecondary = false;
-		Settings::Flow primaryFlow;
-		Settings::Flow secondaryFlow;
-		Settings::Alignment primaryAlignment;
-		Settings::Alignment secondaryAlignment;
+		Container::step1C_maximize(availableSize);
+		return;
+		
+		// algorithm needs updating, currently broken
 		
 		FlowContainerSettings* currentSettings = getFlowContainerSettings();
+		Settings::Step currentStep = Settings::Step::s1C_maximize;
 		
+		dInfoStep1C = dInfoStep1B;
+		int availableWidth = availableSize.x;
+		int availableHeight = availableSize.y;
+		
+		dInfoStep1C.totalWidth = availableWidth;
+		dInfoStep1C.totalHeight = availableHeight;
+		
+		availableWidth -= currentSettings->getInnerSpacingHorizontal();
+		availableHeight -= currentSettings->getInnerSpacingVertical();
+		
+		std::list<int> finalListPrimary;
+		std::list<int> finalListSecondary;
+		std::list<int> maxListSecondary;
+		std::list<int> sizeListSecondary;
+		
+		getMaximizationSpaceList(currentSettings, finalListPrimary,
+		                         maxListSecondary, sizeListSecondary, availableWidth, availableHeight);
+		                         
 		bool xIsPrimary = currentSettings->xIsPrimary();
-		
-		//Settings::Step dataStep = Settings::Step::s1D_reAdjust;
-		const DimensionsInfo& dInfo = getDimensionsInfo();
-		DimensionsMapper dMapper(&dInfoStep1D, xIsPrimary);
-		
-		absRefX = determineAbsoluteRefX(currentSettings, dInfo, getPositionInfo().posRectangle.x);
-		absRefY = determineAbsoluteRefY(currentSettings, dInfo, getPositionInfo().posRectangle.y);
-		
-		
-		if(xIsPrimary == true)
+		int secondarySpacing;
+		int secondarySize;
+		if(xIsPrimary)
 		{
-			absoluteReferencePrimary = absRefX;
-			absoluteReferenceSecondary = absRefY;
-			equalCellPrimary = currentSettings->equalCellWidth;
-			equalCellSecondary = currentSettings->equalCellHeight;
-			basePrimarySpacing = currentSettings->cellSpacingWidth;
-			baseSecondarySpacing = currentSettings->cellSpacingHeight;
-			primaryFlow = currentSettings->horizontalFlow;
-			secondaryFlow = currentSettings->verticalFlow;
-			primaryAlignment = currentSettings->horizontalAlignment;
-			secondaryAlignment = currentSettings->verticalAlignment;
+			secondarySpacing = currentSettings->cellSpacingHeight;
+			secondarySize = availableHeight;
 		}
-		else // xIsPrimary == false
+		else
 		{
-			absoluteReferencePrimary = absRefY;
-			absoluteReferenceSecondary = absRefX;
-			equalCellPrimary = currentSettings->equalCellHeight;
-			equalCellSecondary = currentSettings->equalCellWidth;
-			basePrimarySpacing = currentSettings->cellSpacingHeight;
-			baseSecondarySpacing = currentSettings->cellSpacingWidth;
-			primaryFlow = currentSettings->verticalFlow;
-			secondaryFlow = currentSettings->horizontalFlow;
-			primaryAlignment = currentSettings->verticalAlignment;
-			secondaryAlignment = currentSettings->horizontalAlignment;
+			secondarySpacing = currentSettings->cellSpacingWidth;
+			secondarySize = availableWidth;
 		}
 		
-		updateAbsolutePositions(basicBlocks, dMapper, currentSettings,
-		                        absoluteReferencePrimary, absoluteReferenceSecondary,
-		                        basePrimarySpacing, baseSecondarySpacing,
-		                        equalCellPrimary, equalCellSecondary,
-		                        primaryFlow, secondaryFlow,
-		                        primaryAlignment, secondaryAlignment);
-	}
-	
-	
-	void FlowContainer::step2B_determineCutRectangles(const Rectangle& availableSpace)
-	{
-		Rectangle requiredSpace;
-		requiredSpace = pInfo.posRectangle;
+		addMaximizationToFinalList(secondarySpacing, secondarySize,
+		                           finalListSecondary, sizeListSecondary, maxListSecondary);
+		                           
+		DimensionsMapper dMapper(&dInfoStep1C, xIsPrimary);
+		std::list<int>::iterator j;
+		std::list<unsigned int>::const_iterator blockBreakIndex = dInfoStep1C.newLineBreaks.begin();
+		std::vector<int>::iterator lineMaxIt = dMapper.lineMaxSecondary->begin();
+		std::list<int>::const_iterator finalListSecondaryIt = finalListSecondary.begin();
+		j = finalListPrimary.begin();
 		
-		if(requiredSpace.width < availableSpace.width)
-			requiredSpace.width = availableSpace.width;
-		if(requiredSpace.height < availableSpace.height)
-			requiredSpace.height = availableSpace.height;
-			
-		pInfo.cutRectangle = requiredSpace.intersect(availableSpace);
-		pInfo.intersectionRectangle = pInfo.posRectangle.intersect(pInfo.cutRectangle);
-		
+		unsigned int maxSecondary = 0;
 		SubComponents::Filter filter;
 		filter.addFilterFuntion(isPhysical);
 		
 		for(iterator i=basicBlocks.begin(&filter); !i.isEnd(); ++i)
-			(*i)->step2B_determineCutRectangles(pInfo.intersectionRectangle);
-	}
-	
-	
-	int FlowContainer::determineAbsoluteRefX(const FlowContainerSettings* currentSettings,
-	        const DimensionsInfo& dInfo, int posInfoX)
-	{
-		int containerInnerWidth = 0;
-		int centerDisplacementX = 0;
-		int subComponentsWidth = 0;
-		
-		subComponentsWidth = dInfo.subComponentsTotalWidth;
-		//containerInnerWidth = getParentAlternative()->getDimensionsInfo(dataStep)->totalWidth;
-		containerInnerWidth = dInfo.totalWidth;
-		containerInnerWidth -= currentSettings->getSpacingHorizontal();
-		
-		if(containerInnerWidth > subComponentsWidth)
-			centerDisplacementX = (containerInnerWidth - subComponentsWidth) / 2;
-			
-		int absRefX = posInfoX + currentSettings->getSpacingLeft();
-		
-		if(currentSettings->horizontalFlow == Settings::Flow::LeftToRightFlow)
 		{
-			if(currentSettings->horizontalGravity == Settings::Gravity::RightGravity)
+			if(blockBreakIndex != dInfoStep1C.newLineBreaks.end())
 			{
-				if(containerInnerWidth > subComponentsWidth)
+				if(i.getCounter() == (int)*blockBreakIndex)
 				{
-					absRefX += containerInnerWidth;
-					absRefX -= subComponentsWidth;
+					maxSecondary = 0;
+					++blockBreakIndex;
+					++finalListSecondaryIt;
+					++lineMaxIt;
 				}
 			}
-			else if(currentSettings->horizontalGravity == Settings::Gravity::CenterGravity)
+			
+			if(xIsPrimary)
 			{
-				if(containerInnerWidth > subComponentsWidth)
-					absRefX += centerDisplacementX;
+				Vector blockAvailableSize(*j, *finalListSecondaryIt);
+				(*i)->step1C_maximize(blockAvailableSize);
+				unsigned int secondary = (*i)->getDimensionsInfo(Settings::Step::s1C_maximize).totalHeight;
+				maxSecondary = maxSecondary > secondary ? maxSecondary : secondary;
 			}
-		}
-		else // currentSettings->horizontalFlow == Settings::Flow::RightToLeftFlow
-		{
-			if(currentSettings->horizontalGravity == Settings::Gravity::LeftGravity)
-				absRefX += subComponentsWidth;
-			else if(currentSettings->horizontalGravity == Settings::Gravity::RightGravity)
+			else
 			{
-				if(containerInnerWidth > subComponentsWidth)
-					absRefX += containerInnerWidth;
-				else
-					absRefX += subComponentsWidth;
+				Vector blockAvailableSize(*finalListSecondaryIt, *j);
+				(*i)->step1C_maximize(blockAvailableSize);
+				unsigned int secondary = (*i)->getDimensionsInfo(Settings::Step::s1C_maximize).totalWidth;
+				maxSecondary = maxSecondary > secondary ? maxSecondary : secondary;
 			}
-			else // currentSettings->horizontalGravity == Settings::Gravity::CenterGravity
-			{
-				absRefX += subComponentsWidth;
-				if(containerInnerWidth > subComponentsWidth)
-					absRefX += centerDisplacementX;
-			}
+			
+			*lineMaxIt = maxSecondary;
+			
+			++j;
 		}
 		
-		return absRefX;
+		int primaryLimit = findPrimaryLimit(currentSettings);
+		updateRowColumnInfo(basicBlocks, dMapper,
+		                    primaryLimit, currentStep,
+		                    currentSettings);
+		                    
+		                    
+		// commit computations to minimization step info
+		dInfoStep1C.totalWidth = dInfoStep1C.subComponentsTotalWidth;
+		dInfoStep1C.totalWidth += currentSettings->getInnerSpacingHorizontal();
+		if(dInfoStep1C.totalWidth < 0)
+			dInfoStep1C.totalWidth = 0;
+			
+		dInfoStep1C.totalHeight = dInfoStep1C.subComponentsTotalHeight;
+		dInfoStep1C.totalHeight += currentSettings->getInnerSpacingVertical();
+		if(dInfoStep1C.totalHeight < 0)
+			dInfoStep1C.totalHeight = 0;
+			
+			
+		// do not include outter spacing at this stage
+		// do that in the Alternative's function
 	}
 	
 	
-	int FlowContainer::determineAbsoluteRefY(const FlowContainerSettings* currentSettings,
-	        const DimensionsInfo& dInfo, int posInfoY)
-	{
-		int containerInnerHeight = 0;
-		int centerDisplacementY = 0;
-		int subComponentsHeight = 0;
-		
-		subComponentsHeight = dInfo.subComponentsTotalHeight;
-		//containerInnerHeight = getParentAlternative()->getDimensionsInfo(dataStep)->totalHeight;
-		containerInnerHeight = dInfo.totalHeight;
-		containerInnerHeight -= currentSettings->getSpacingVertical();
-		
-		if(containerInnerHeight > subComponentsHeight)
-			centerDisplacementY = (containerInnerHeight - subComponentsHeight) / 2;
-			
-		int absRefY = posInfoY + currentSettings->getSpacingTop();
-		
-		if(currentSettings->verticalFlow == Settings::Flow::TopToBottomFlow)
-		{
-			if(currentSettings->verticalGravity == Settings::Gravity::BottomGravity)
-			{
-				if(containerInnerHeight > subComponentsHeight)
-				{
-					absRefY += containerInnerHeight;
-					absRefY -= subComponentsHeight;
-				}
-			}
-			else if(currentSettings->verticalGravity == Settings::Gravity::CenterGravity)
-			{
-				if(containerInnerHeight > subComponentsHeight)
-					absRefY += centerDisplacementY;
-			}
-		}
-		else // currentSettings->verticalFlow == Settings::Flow::BottomToTopFlow
-		{
-			if(currentSettings->verticalGravity == Settings::Gravity::TopGravity)
-				absRefY += subComponentsHeight;
-			else if(currentSettings->verticalGravity == Settings::Gravity::BottomGravity)
-			{
-				if(containerInnerHeight > subComponentsHeight)
-					absRefY += containerInnerHeight;
-				else
-					absRefY += subComponentsHeight;
-			}
-			else // currentSettings->verticalGravity == Settings::Gravity::CenterGravity
-			{
-				absRefY += subComponentsHeight;
-				if(containerInnerHeight > subComponentsHeight)
-					absRefY += centerDisplacementY;
-			}
-		}
-		
-		return absRefY;
-	}
 	
-	
-	void FlowContainer::updateAbsolutePositions(SubComponents& basicBlocks, DimensionsMapper& dMapper,
-	        const FlowContainerSettings* currentSettings,
-	        const int absoluteReferencePrimary, const int absoluteReferenceSecondary,
-	        const int basePrimarySpacing, const int baseSecondarySpacing,
-	        const bool equalCellPrimary, const bool equalCellSecondary,
-	        const Settings::Flow primaryFlow, const Settings::Flow secondaryFlow,
-	        const Settings::Alignment primaryAlignment,
-	        const Settings::Alignment secondaryAlignment)
+	Vector FlowContainer::getAvailableMaximization() const
 	{
-		Settings::Step dataStep = Settings::Step::s1D_reAdjust;
+		int maxX, maxY;
+		maxX = maxY = 0;
 		
-		int nextNewLineIndex = -1;
-		int posPrimary = 0;
-		int posSecondary = 0;
-		int primaryIndex = 0;
-		int secondaryIndex = 0;
-		int primarySpacing = 0;
-		int secondarySpacing = 0;
-		int primaryAlignOffset = 0;
-		int secondaryAlignOffset = 0;
-		bool xIsPrimary = currentSettings->xIsPrimary();
-		
-		std::list<unsigned int>::const_iterator lineBreakIterator;
-		
-		lineBreakIterator = dMapper.newLineBreaks->begin();
-		if(lineBreakIterator != dMapper.newLineBreaks->end())
-			nextNewLineIndex = (int)*lineBreakIterator;
-			
 		SubComponents::Filter filter;
 		filter.addFilterFuntion(isPhysical);
 		
-		for(iterator block = basicBlocks.begin(&filter); !block.isEnd(); ++block, ++primaryIndex)
+		for(const_iterator i=basicBlocks.begin(&filter); !i.isEnd(); ++i)
 		{
-			if(*block == nullptr)
-				throw std::exception();
+			Vector result = (*i)->getAvailableMaximization();
+			
+			if(result.x > 0 && maxX >= 0)
+				maxX = maxX > result.x ? maxX : result.x;
 				
-			if(nextNewLineIndex == block.getCounter())
+			if(result.y > 0 && maxY >= 0)
+				maxY = maxY > result.y ? maxY : result.y;
+				
+			if(result.x < 0)
+				maxX = maxX < result.x ? maxX : result.x;
+				
+			if(result.y < 0)
+				maxY = maxY < result.y ? maxY : result.y;
+				
+			if(maxX < 0 && maxY < 0)
+				return Vector(maxX, maxY);
+		}
+		
+		return Vector(maxX, maxY);
+	}
+	
+	
+	void FlowContainer::getMaximizationSpaceList(const FlowContainerSettings* currentSettings,
+	        std::list<int>& finalList,
+	        std::list<int>& maxListSecondary,
+	        std::list<int>& sizeListSecondary,
+	        int availableWidth, int availableHeight)
+	{
+		std::list<int> sizeList;
+		std::list<int> maxListPrimary;
+		
+		int spacing = 0;
+		int availableSize = 0;
+		int secondaryMax = 0;
+		bool xIsPrimary = currentSettings->xIsPrimary();
+		
+		std::vector<int>::iterator sizeSecondaryIt;
+		DimensionsMapper dMapper(&dInfoStep1C, xIsPrimary);
+		sizeSecondaryIt = dMapper.lineMaxSecondary->begin();
+		
+		if(xIsPrimary)
+		{
+			spacing = currentSettings->cellSpacingWidth;
+			availableSize = availableWidth;
+		}
+		else
+		{
+			spacing = currentSettings->cellSpacingHeight;
+			availableSize = availableHeight;
+		}
+		
+		std::list<unsigned int>::const_iterator blockBreakIndex = dInfoStep1C.newLineBreaks.begin();
+		SubComponents::Filter filter;
+		filter.addFilterFuntion(isPhysical);
+		
+		for(const_iterator block=basicBlocks.begin(&filter); !block.isEnd(); ++block)
+		{
+			if(blockBreakIndex != dInfoStep1C.newLineBreaks.end())
 			{
-				posPrimary = 0;
-				
-				posSecondary += (*dMapper.lineMaxSecondary)[secondaryIndex];
-				posSecondary += secondarySpacing;
-				
-				primaryIndex = 0;
-				++secondaryIndex;
-				
-				++lineBreakIterator;
-				if(lineBreakIterator != dMapper.newLineBreaks->end())
-					nextNewLineIndex = (int)*lineBreakIterator;
-				else
-					nextNewLineIndex = -1;
+				if(block.getCounter() == (int)*blockBreakIndex)
+				{
+					sizeListSecondary.push_back(*sizeSecondaryIt);
+					maxListSecondary.push_back(secondaryMax);
+					addMaximizationToFinalList(spacing, availableSize, finalList, sizeList, maxListPrimary);
+					sizeList.clear();
+					maxListPrimary.clear();
+					++blockBreakIndex;
+					++sizeSecondaryIt;
+					secondaryMax = 0;
+				}
 			}
 			
-			Vector blockSize = getBlockSize(*block, dataStep);
+			int blockSecondaryMax;
+			Vector result = (*block)->getAvailableMaximization();
+			Vector blockSize = getBlockSize(*block, Settings::Step::s1B_adjust);
+			
 			if(xIsPrimary == false)
+			{
+				result.swapValues();
 				blockSize.swapValues();
-				
-			int primarySize;
-			if(equalCellPrimary == true)
-				primarySize = *dMapper.subComponentsMaxPrimary;
+			}
+			
+			sizeList.push_back(blockSize.x);
+			maxListPrimary.push_back(result.x);
+			blockSecondaryMax = result.y;
+			
+			if(blockSecondaryMax < 0 || secondaryMax < 0)
+				secondaryMax = (secondaryMax < blockSecondaryMax) ? secondaryMax : blockSecondaryMax;
 			else
-				primarySize = blockSize.x;
-				
-			int secondarySize;
-			if(equalCellSecondary == true)
-				secondarySize = *dMapper.subComponentsMaxSecondary;
-			else
-				secondarySize = blockSize.y;
-				
-				
-			PositionInfo* blockPInfo = &(*block)->pInfo;
-			PositionMapper pMapper(blockPInfo, xIsPrimary);
-			
-			*pMapper.coordPrimary = determinePrimaryCoord(dMapper, xIsPrimary,
-                                            secondaryIndex, posPrimary, primarySize,
-                                            absoluteReferencePrimary, primaryFlow, primaryAlignment);
-			*pMapper.coordSecondary = determineSecondaryCoord(dMapper, xIsPrimary,
-                                            secondaryIndex, posSecondary, secondarySize, blockSize.y,
-                                            absoluteReferenceSecondary, secondaryFlow, secondaryAlignment);
-			
-			(*block)->step2A_determinePositions();
-			
-			primarySpacing = basePrimarySpacing;
-			secondarySpacing = baseSecondarySpacing;
-			
-			/*
-			    if(xIsPrimary == true)
-			    {
-			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
-			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
-			    }
-			    else
-			    {
-			    primarySpacing = basePrimarySpacing + ???; // add to spacing if elements are spread out
-			    secondarySpacing = baseSecondarySpacing + ???; // add to spacing if elements are spread out
-			    }
-			*/
-			
-			posPrimary += primarySize;
-			posPrimary += primarySpacing;
+				secondaryMax = (secondaryMax > blockSecondaryMax) ? secondaryMax : blockSecondaryMax;
+		}
+		
+		if(sizeList.size() > 0)
+		{
+			sizeListSecondary.push_back(*sizeSecondaryIt);
+			maxListSecondary.push_back(secondaryMax);
+			addMaximizationToFinalList(spacing, availableSize, finalList, sizeList, maxListPrimary);
 		}
 	}
 	
 	
-	int FlowContainer::determinePrimaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
-            int secondaryIndex, int posPrimary, int primarySize,
-	        const int absoluteReferencePrimary,
-	        const Settings::Flow primaryFlow,
-	        const Settings::Alignment primaryAlignment)
+	void FlowContainer::addMaximizationToFinalList(int cellSpacing, int availableSize,
+	        std::list<int>& finalList,
+	        const std::list<int>& sizeList,
+	        const std::list<int>& maxList)
 	{
-		int coordPrimary = absoluteReferencePrimary;
-		int primaryAlignOffset = 0;
-		bool primaryFlowFlag = false;
-		bool primaryAlignmentFlag = false;
+		double totalSize = 0.0;
+		int totalExtraLast = 0;
+		int totalExtraCurrent = 0;
+		int availableIncrement = availableSize;
 		
-		primaryAlignOffset = *dMapper.subComponentsTotalPrimary;
-		primaryAlignOffset -= (*dMapper.lineTotalPrimary)[secondaryIndex];
+		std::list<int> extraList;
 		
-		if(xIsPrimary == true)
-			primaryFlowFlag = (primaryFlow == Settings::Flow::LeftToRightFlow);
-		else
-			primaryFlowFlag = (primaryFlow == Settings::Flow::TopToBottomFlow);
+		std::list<int>::const_iterator i, j;
+		std::list<int>::iterator k;
+		
+		bool first = true;
+		for(i=sizeList.begin(); i!=sizeList.end(); ++i)
+		{
+			extraList.push_back(0);
+			availableIncrement -= *i;
+			if(first == true)
+				first = false;
+			else
+				availableIncrement -= cellSpacing;
+		}
+		
+		do
+		{
+			totalExtraLast = totalExtraCurrent;
 			
-		if(primaryFlowFlag == true)
-		{
-			if(xIsPrimary == true)
-				primaryAlignmentFlag = (primaryAlignment == Settings::Alignment::RightAlignment);
-			else
-				primaryAlignmentFlag = (primaryAlignment == Settings::Alignment::BottomAlignment);
-				
-			coordPrimary += posPrimary;
-			if(primaryAlignmentFlag == true)
-				coordPrimary += primaryAlignOffset;
-			else if(primaryAlignment == Settings::Alignment::CenterAlignment)
-				coordPrimary += primaryAlignOffset / 2;
-		}
-		else
-		{
-			if(xIsPrimary == true)
-				primaryAlignmentFlag = (primaryAlignment == Settings::Alignment::LeftAlignment);
-			else
-				primaryAlignmentFlag = (primaryAlignment == Settings::Alignment::TopAlignment);
-				
-			coordPrimary -= posPrimary;
-			coordPrimary -= primarySize;
-			if(primaryAlignmentFlag == true)
-				coordPrimary -= primaryAlignOffset;
-			else if(primaryAlignment == Settings::Alignment::CenterAlignment)
-				coordPrimary -= primaryAlignOffset / 2;
-		}
-		
-		return coordPrimary;
-	}
-	
-	
-	int FlowContainer::determineSecondaryCoord(DimensionsMapper& dMapper, bool xIsPrimary,
-            int secondaryIndex, int posSecondary, int secondarySize, int blockSizeY,
-	        const int absoluteReferenceSecondary,
-	        const Settings::Flow secondaryFlow,
-	        const Settings::Alignment secondaryAlignment)
-	{
-		int coordSecondary = absoluteReferenceSecondary;
-		int secondaryAlignOffset = 0;
-		bool secondaryFlowFlag = false;
-		bool secondaryAlignmentFlag = false;
-		
-		secondaryAlignOffset = (*dMapper.lineMaxSecondary)[secondaryIndex];
-		secondaryAlignOffset -= blockSizeY;
-		
-		if(xIsPrimary == false)
-			secondaryFlowFlag = (secondaryFlow == Settings::Flow::LeftToRightFlow);
-		else
-			secondaryFlowFlag = (secondaryFlow == Settings::Flow::TopToBottomFlow);
+			i = sizeList.begin();
+			j = maxList.begin();
+			k = extraList.begin();
 			
-		if(secondaryFlowFlag == true)
-		{
-			if(xIsPrimary == false)
-				secondaryAlignmentFlag = (secondaryAlignment == Settings::Alignment::RightAlignment);
-			else
-				secondaryAlignmentFlag = (secondaryAlignment == Settings::Alignment::BottomAlignment);
+			totalSize = 0.0;
+			totalExtraCurrent = 0;
+			for(; i!=sizeList.end(); ++i, ++j, ++k)
+			{
+				if(*k < *j || *j < 0)
+					totalSize += *i;
+				else
+					totalExtraCurrent += *k;
+			}
+			
+			if(totalSize < 1)
+				totalSize = 1.0;
 				
-			coordSecondary += posSecondary;
-			if(secondaryAlignmentFlag == true)
-				coordSecondary += secondaryAlignOffset;
-			else if(secondaryAlignment == Settings::Alignment::CenterAlignment)
-				coordSecondary += secondaryAlignOffset / 2;
+			i = sizeList.begin();
+			j = maxList.begin();
+			k = extraList.begin();
+			
+			for(; i!=sizeList.end(); ++i, ++j, ++k)
+			{
+				if(*k < *j || *j < 0)
+				{
+					double sizeRatio = ((double)*i) / totalSize;
+					double maxPortion = sizeRatio * (availableIncrement - totalExtraCurrent);
+					
+					if(maxPortion > ((double)*j) && *j >= 0)
+						*k = *j;
+					else
+						*k = maxPortion;
+				}
+			}
 		}
-		else
-		{
-			if(xIsPrimary == false)
-				secondaryAlignmentFlag = (secondaryAlignment == Settings::Alignment::LeftAlignment);
-			else
-				secondaryAlignmentFlag = (secondaryAlignment == Settings::Alignment::TopAlignment);
-				
-			coordSecondary -= posSecondary;
-			coordSecondary -= secondarySize;
-			if(secondaryAlignmentFlag == true)
-				coordSecondary -= secondaryAlignOffset;
-			else if(secondaryAlignment == Settings::Alignment::CenterAlignment)
-				coordSecondary -= secondaryAlignOffset / 2;
-		}
+		while(totalExtraCurrent > totalExtraLast);
 		
-		return coordSecondary;
+		i = sizeList.begin();
+		k = extraList.begin();
+		
+		for(; i!=sizeList.end(); ++i, ++k)
+			finalList.push_back(*i + *k);
 	}
 	
 	

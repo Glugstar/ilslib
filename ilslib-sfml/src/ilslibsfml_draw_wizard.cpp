@@ -269,7 +269,8 @@ namespace ILSLibSFML
 		firstShadowColor.g = ar->firstShadowColor.green;
 		firstShadowColor.b = ar->firstShadowColor.blue;
 		firstShadowColor.a = ar->firstShadowColor.alpha;
-		message1.setColor(firstShadowColor);
+		message1.setFillColor(firstShadowColor);
+		//message1.setOutlineColor(firstShadowColor);
 		//message1.setStyle(sf::Text::Bold | sf::Text::Underlined);
 		message1.setPosition(ar->coordsRectangle.x + ar->firstShadowOffsetX,
 							ar->coordsRectangle.y + ar->firstShadowOffsetY);
@@ -285,7 +286,8 @@ namespace ILSLibSFML
 		fontColor.g = ar->fontColor.green;
 		fontColor.b = ar->fontColor.blue;
 		fontColor.a = ar->fontColor.alpha;
-		message2.setColor(fontColor);
+		message2.setFillColor(fontColor);
+		//message2.setOutlineColor(fontColor);
 		//message2.setStyle(sf::Text::Bold | sf::Text::Underlined);
 		message2.setPosition(ar->coordsRectangle.x, ar->coordsRectangle.y);
 

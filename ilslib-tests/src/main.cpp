@@ -14,8 +14,8 @@ int main()
 	for(std::list<ContainerStyle*>::iterator i=styles.begin(); i!=styles.end(); ++i)
 		window.getBlockManager().addContainerStyle(*i);
 		
-	//createBasicDisplay(window.getBlockManager(), rootName);
-	createAllTestsA(window.getBlockManager(), rootName);
+	createBasicDisplay(window.getBlockManager(), rootName);
+	//createAllTestsA(window.getBlockManager(), rootName);
 	
 	/*  TextComponent* text;
 	    text = ((TextComponent*)window.getBlockManager().findBasicBlock("Root/group1#1#block15#c12"));
